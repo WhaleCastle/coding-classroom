@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# OMC orchestration state (local, not course content)
+.omc/
+
+# Screenshots
+screenshots/
+
+# --- Dev/authoring files: local only, never published to the learner repo ---
+# CLAUDE.md = author instructions; docs/ = authoring template.
+CLAUDE.md
+docs/
+
+# Student work stays on the learner's own machine — ship only the empty
+# folder structure (the tracked .gitkeep placeholders are unaffected).
+*/student/**
