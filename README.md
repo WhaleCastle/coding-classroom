@@ -8,13 +8,14 @@ the student types every line of code himself.
 
 - `AGENTS.md` — the tutor's rulebook: teaching style, hard rules ("never write
   the student's code"), session flow. Read automatically by Copilot and Cursor.
-- `.github/agents/tutor.agent.md` — a custom **read-only** tutor agent for
-  VS Code Copilot Chat (no file-editing tools, so it *can't* do the work for
-  the student).
+- `.github/agents/tutor.agent.md` — a custom tutor agent for VS Code Copilot
+  Chat. It is told never to write the student's code or run his programs — it
+  only edits its own `progress.md` log — so the student always does the work.
 - `python-course/`, `vscode-basics/` — one folder per course. Each contains
   `tutor/` (one fully-scripted lesson file per chapter), `student/` (the
   student's own work, one folder per chapter), and `progress.md` (the tutor's
-  memory between sessions — the student updates it himself at session end).
+  memory between sessions — the tutor keeps it updated, logging what he learned
+  and where he struggled).
   **Do `vscode-basics` first** — a short 3-chapter course on the editor and
   terminal — then the main `python-course`.
 
@@ -30,8 +31,10 @@ strictly in role: anything unrelated to the courses is politely declined.
 3. Clone or download this repo and open the `coding-classroom` folder in
    VS Code (File → Open Folder).
 4. Open Copilot Chat. In the agent/mode picker choose the **tutor** agent and a
-   small model (GPT-5 mini works well). If the tutor agent doesn't appear,
-   use **Ask mode** — it also cannot edit files.
+   small model (GPT-5 mini works well). In its tools, leave file-editing on (it
+   keeps a progress log) but turn OFF anything that runs terminal commands — the
+   student runs his code himself. If the tutor agent doesn't appear, **Ask mode**
+   works too, but it can't keep the progress log (you'd update it by hand).
 5. The student types: `Hi! I'm ready for my Python lesson.` — and off you go.
 
 ## Daily session
@@ -41,7 +44,8 @@ strictly in role: anything unrelated to the courses is politely declined.
    accept it, or ask for a different chapter or a review.
 3. Your work goes in the course's `student/chapter-XX/` folder; run code
    yourself in the terminal (`python yourfile.py`).
-4. At the end, copy the tutor's progress block into that course's `progress.md`.
+4. At the end, the tutor updates that course's `progress.md` itself — noting what
+   you did and where you struggled — so it remembers next time.
 5. (Optional but great habit) Commit your work:
    `git add . && git commit -m "Chapter 2 session"`
 
@@ -54,9 +58,14 @@ strictly in role: anything unrelated to the courses is politely declined.
 ## Course status
 
 - **vscode-basics**: complete (3 short chapters) — start here.
-- **python-course**: chapters 1–3 fully scripted; full 14-chapter map in
-  `python-course/tutor/00-course-overview.md`. More chapters coming after the
-  pilot.
+- **python-course**: a year-long **"build your own RPG"** course. Across 20
+  chapters (+2 optional bonuses) the student builds one text-mode role-playing
+  game — character creation, a dungeon maze, combat and conversation encounters,
+  and a story that branches into different endings — and along the way practises
+  every programming skill in the **UK Key Stage 3–4 Computer Science**
+  curriculum. Full chapter map and coverage in
+  `python-course/tutor/00-course-overview.md`. Chapters are being written and
+  piloted in batches.
 - **php-course**: planned.
 
 ## License
