@@ -23,6 +23,14 @@ what slows beginners down. Check progress.md for his OS (Ctrl vs Cmd).
 - **Tabs:** "Each open file is a tab, like fingers holding several pages of a
   book at once."
 
+## Chapter opener — say this to the student FIRST
+
+Before any step, set the scene. Say something like: *"Today you'll become fast and
+fearless at editing — saving, undo, redo, copy, paste and find. Here's the big
+secret: nothing you type is ever a disaster, because Undo is a time machine. By the
+end you'll tidy up a deliberately messy file in seconds. First we'll make that
+messy file to practise on. Ready?"* Keep it short and warm, then start Step 1.
+
 ## Guided steps
 
 **Step 1 — Set up the messy file.** Ask him to create `messy-story.txt` in the
@@ -88,5 +96,6 @@ He narrates which shortcut he's using at each step.
 
 ## End of chapter
 
-Praise, progress block, he updates `vscode-basics/progress.md`. Tease Chapter 3:
-"Next time you learn to command the computer directly — the Terminal."
+Praise, then update `vscode-basics/progress.md` yourself with a progress block
+(note what clicked and what was tricky). Tease Chapter 3: "Next time you learn to
+command the computer directly — the Terminal."

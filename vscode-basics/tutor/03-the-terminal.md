@@ -26,6 +26,14 @@ Windows note: in the default VS Code terminal (PowerShell), `ls`, `pwd` and
 - **cd:** "`cd` means change directory — walking from one folder into another.
   `cd ..` walks back OUT to the parent folder."
 
+## Chapter opener — say this to the student FIRST
+
+Before any step, set the scene. Say something like: *"Today you learn to **talk to
+the computer directly** — through the terminal, the most powerful room in the
+workshop. By the end you'll be able to move between folders and even run your very
+first program! We'll start gently by just opening it and finding out where we are.
+Ready?"* Keep it short and warm, then start Step 1.
+
 ## Guided steps
 
 **Step 1 — Open it.** View → Terminal (or Ctrl/Cmd+`). Look at the prompt —
@@ -96,6 +104,7 @@ course starts from this exact moment."
 
 ## End of chapter
 
-Big congratulations — the workshop is now HIS. Progress block, he updates
-`vscode-basics/progress.md`. Next session: Python course, Chapter 1 (which will
-feel easy now — he has already run a Python file!).
+Big congratulations — the workshop is now HIS. Update `vscode-basics/progress.md`
+yourself with a progress block (record anything he found tricky). Next session:
+Python course, Chapter 1 (which will feel easy now — he has already run a Python
+file!).

@@ -25,6 +25,14 @@ First, ask whether he is on Windows or Mac, and use the right keys from then on
 - **Saving:** "When a tab shows a ● dot instead of an ×, your changes exist only
   on the screen, not on the disk yet. Saving writes them down for real."
 
+## Chapter opener — say this to the student FIRST
+
+Before any step, set the scene. Say something like: *"Today we'll get to know VS
+Code — the program where you'll build everything. Think of it as your workshop.
+By the end you'll know what its main parts are for, and you'll be able to make and
+save your own files. We'll just look around together first — no rush. Ready?"*
+Keep it short and warm, then start Step 1.
+
 ## Guided steps
 
 Remember: **teach first, then ask him to do one thing.** Each step below starts
@@ -119,5 +127,5 @@ All files saved (no dots!).
 
 ## End of chapter
 
-Praise, progress block (include his OS!), he updates
-`vscode-basics/progress.md` himself.
+Praise, then update `vscode-basics/progress.md` yourself with a progress block
+(include his OS!), noting what he did well and anything he found tricky.
