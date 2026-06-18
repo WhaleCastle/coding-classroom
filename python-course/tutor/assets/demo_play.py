@@ -14,13 +14,58 @@ vivid.
 Run it:  python demo_play.py
 Pure Python 3 — no libraries to install.
 
-Controls: type a letter then press ENTER.
+Controls: just press a key — no ENTER needed.
     w / a / s / d  = move up / left / down / right
     c              = show your character sheet
     q              = quit the demo
 """
 
 import random
+
+import sys
+
+def clear_screen():
+    # \033[H moves the cursor to the top left
+    # \033[2J clears the visible screen
+    # Clearing then re-drawing every step is what makes the @ look like it MOVES
+    # instead of leaving a trail of old maps down the screen.
+    sys.stdout.write("\033[H\033[2J")
+    sys.stdout.flush()
+
+
+def get_key():
+    """Read ONE keypress and return it as a lowercase letter — WITHOUT the player
+    pressing ENTER. This needs different low-level code on Windows vs Mac/Linux,
+    which is exactly why it lives in this pre-made asset and is NEVER something the
+    student writes himself (it is well outside the beginner syllabus)."""
+    try:
+        import msvcrt                       # Windows
+        ch = msvcrt.getch()
+        if ch in (b"\x00", b"\xe0"):        # arrow / function keys send two bytes
+            msvcrt.getch()                  # swallow the second byte
+            return ""
+        if ch == b"\x03":                   # Ctrl+C
+            raise KeyboardInterrupt
+        return ch.decode(errors="ignore").lower()
+    except ImportError:
+        import termios, tty                 # Mac / Linux
+        fd = sys.stdin.fileno()
+        old = termios.tcgetattr(fd)
+        try:
+            tty.setraw(fd)
+            ch = sys.stdin.read(1)
+        finally:
+            termios.tcsetattr(fd, termios.TCSADRAIN, old)
+        if ch == "\x03":                    # Ctrl+C
+            raise KeyboardInterrupt
+        return ch.lower()
+
+
+def pause(msg="\n  (press ENTER to continue)"):
+    """Stop so the player can READ what just happened before the loop clears the
+    screen and redraws the map. Uses ENTER on purpose — a deliberate beat after a
+    big moment like a goblin fight or a conversation."""
+    input(msg)
 
 # ---------------------------------------------------------------------------
 # The dungeon. Each string is a row; each character is one cell.
@@ -32,7 +77,7 @@ MAZE = [
     "#####################",
     "#@..#...........#...#",
     "###.#####.#####.###.#",
-    "#.#.....#...#...#G..#",
+    "#.#.....#...#...#X..#",
     "#.#####.#.#.#.###.###",
     "#.....#.#.#.#...#...#",
     "#.#####.#.#.###.###.#",
@@ -42,7 +87,7 @@ MAZE = [
     "###.###.###.#.#.###.#",
     "#..H#...#...#.#...#.#",
     "#.###.#######.###.#.#",
-    "#.............#....X#",
+    "#.............#....G#",
     "#####################",
 ]
 
@@ -185,24 +230,26 @@ def main():
     spoken = set()
 
     while True:
+        clear_screen()
         draw(hero, pos, defeated, spoken)
-        cmd = (input("> ").strip().lower() + " ")[0]
+        cmd = get_key()                      # ONE key press — no ENTER needed
         if cmd == "q":
             print("You step back out of the crypt. (demo ended)")
             return
         if cmd == "c":
+            clear_screen()
             show_sheet(hero)
+            print("\n  (press any key to go back)")
+            get_key()
             continue
 
         move = {"w": (-1, 0), "s": (1, 0), "a": (0, -1), "d": (0, 1)}.get(cmd)
         if not move:
-            print("  (Use w, a, s, d to move.)")
-            continue
+            continue                         # any other key: ignore and redraw
 
         nr, nc = pos[0] + move[0], pos[1] + move[1]
         if MAZE[nr][nc] not in WALKABLE:
-            print("  A wall blocks your way.")
-            continue
+            continue                         # a wall — the hero just can't step there
         pos = [nr, nc]
 
         cell = MAZE[nr][nc]
@@ -212,9 +259,11 @@ def main():
                 print(f"\n  ☠ {hero['name']} has fallen in the dark. GAME OVER.")
                 return
             defeated.add(here)
+            pause()                          # let the player read the fight result
         elif cell == "H" and here not in spoken:
             talk(hero)
             spoken.add(here)
+            pause()                          # let the player read the hermit's words
         elif cell == "X":
             ending(hero)
             return

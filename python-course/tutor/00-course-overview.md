@@ -24,6 +24,18 @@ the UK Key Stage 3–4 Computer Science curriculum** (see the coverage map below
   move-it-around demo) live in `tutor/assets/` as **pre-made files the student is
   given**. He can tweak their values for fun (optional bonus chapter B1) but is
   never asked to write graphics code — it's beyond KS3–4.
+- **Live movement (Chapter 14) is two techniques, split by the asset rule.**
+  Walking the maze "for real" needs: (a) **clear-screen** — wipe and re-draw each
+  step so the `@` looks like it moves; this is simple and the student WRITES it (a
+  tiny helper, `print("\n" * 50)`, or a one-line ANSI version handed to him); and
+  (b) **single-key w/a/s/d input** (no ENTER) — this needs low-level, per-OS code
+  (`msvcrt` on Windows, `termios` on Mac/Linux), is well beyond KS3–4 and not
+  cross-platform-writable, so it is a **given helper**, `get_key()`. (It currently
+  lives inline in `assets/demo_play.py`; when ch 14 is written, factor it into
+  `assets/controls.py` so the student's own maze can reuse it.) The student
+  imports it in ONE line — `from controls import get_key`, just like
+  `import random` — and calls it; he never writes or reads its internals. A
+  one-line import is easier to learn than low-level terminal code in his own file.
 
 ## How to use this course
 
@@ -64,7 +76,7 @@ the UK Key Stage 3–4 Computer Science curriculum** (see the coverage map below
 | 11 | Functions that Answer | `return`, local vs global variables, modules | `roll_damage()`, `is_alive()`; refactor battle |
 | 12 | Random Encounters | `import random`, `randint`, `choice` | Random damage + a random monster |
 | 13 | Reading Commands | strings: len/index/slice/concat/case, `ord`+`chr`, convert | Command parser + secret-scroll cipher |
-| 14 | The Dungeon Map | 2D lists (arrays), nested loops, coordinates, collision | The walkable maze (layout given) |
+| 14 | The Dungeon Map | 2D lists (arrays), nested loops, coordinates, collision | The walkable maze (layout given): move with w/a/s/d, screen clears each step |
 | 15 | Talking to Characters | nested selection, dict dialogue, story flags | NPC conversation; choices set flags |
 | 16 | Save Your Adventure | files: open / read / write / close | Save & load the hero and progress |
 | 17 | Bullet-proof the Game | validation, sanitisation, authentication, test data, trace tables, error types | Hardened menus + a save password |

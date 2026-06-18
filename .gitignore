@@ -15,3 +15,7 @@ docs/
 # Student work stays on the learner's own machine — ship only the empty
 # folder structure (the tracked .gitkeep placeholders are unaffected).
 */student/**
+
+# Python build junk
+__pycache__/
+*.pyc
