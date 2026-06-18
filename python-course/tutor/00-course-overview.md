@@ -136,5 +136,6 @@ which is GCSE-aligned). This gives KS4 breadth without the cliff-edges.
 ## Status
 
 - Meta scaffolding (template, rulebook, this overview, assets/folders): in place.
-- Chapters: being written in confirmed batches (see `CLAUDE.md` build order).
+- Chapters **1–8 written** (each with a runnable reference solution). 9–20 + the
+  two bonuses still to come, in confirmed batches (see `CLAUDE.md` build order).
   Pilot the early chapters and the maze chapter; fold feedback back in.
