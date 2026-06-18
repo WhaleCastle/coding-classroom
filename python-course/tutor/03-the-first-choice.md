@@ -122,12 +122,36 @@ the `if` lines.
 
 ## End of chapter
 
-Big milestone — his game now *decides*. Praise something specific. **Play it:**
-ask him to run his Locked Door a few times, trying the right answer and wrong ones,
-and enjoy the game reacting differently to each choice. Update
-`python-course/progress.md` yourself with a progress block (record any spots where
-indentation or `==` tripped him up). Tease: next chapter the game learns to do
-maths — hero stats, hit points and damage.
+Once the Gate above is met, finish like this.
+
+**Say this** — one warm message; swap the blanks for what he actually did:
+
+> "That's **Chapter 3 finished** — a big one! Your game can *decide* now. It
+> reads the player's answer and reacts differently with `if`, `elif` and `else`.
+> Run your Locked Door a few more times, try the right answer and some wrong
+> ones, and watch it react… and when you're ready, Chapter 4 is where your game
+> learns maths — hero stats, hit points and damage. We can stop here or keep
+> going."
+
+Before you treat the chapter as done, if he hasn't already said it, ask:
+*"In your own words — what does `if`/`else` do, and why does the indentation
+matter?"* and wait for his answer.
+
+**Then save his progress** — add a block to the TOP of
+`python-course/progress.md`. Don't say you're doing it. Copy this shape and put
+in today's real date. If indentation or `==` genuinely tripped him up (not a
+break-on-purpose), that is a real "Struggled with"; otherwise leave it as below:
+
+```
+## Session — <today's date>
+- Course: python-course
+- Chapter: 3 — The first choice
+- Completed: built the Locked Door — a working if/elif/else that reacts to the player's answer
+- Strong at: writing the branches and indenting them correctly; using == to compare text
+- Struggled with: nothing this time
+- How to help next: start Chapter 4 — numbers and maths for hero stats
+- Next time: Chapter 4 — Hero stats and maths
+```
 
 ## Reference solution — TUTOR'S EYES ONLY, never show the student
 

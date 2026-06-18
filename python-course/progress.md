@@ -1,18 +1,26 @@
 # Learning Progress — Python Course
 
-The tutor reads this file at the start of every session.
-The STUDENT updates it at the end of every session by copying the tutor's
-progress block to the top of the log below.
+The TUTOR reads this file at the start of every session and keeps it updated
+itself — the student no longer has to. Newest session sits at the top of the log.
 
 ## Student profile
 
 - Level: Year 8, complete beginner
 - Language: English (Cantonese explanations allowed if asked)
-- Current chapter: 1 — Hello, Python
-- Chapters completed: none yet
+- Environment: (ask at the next session — Windows or Mac? and does a file run with
+  `python` or `python3`? — then record it here and carry it forward)
+- Current chapter: 2 — Name your hero (Chapter 1 complete)
+- Chapters completed: 1 — Hero & Title Screen
 
 ## Session log (newest first)
 
-<!-- Paste new progress blocks above this line's older entries -->
+<!-- The tutor adds each new session block directly below this line. -->
 
-*(No sessions yet — today is Day 1!)*
+## Session — 2026-06-17
+- Course: python-course
+- Chapter: 1 — Hero & Title Screen
+- Completed: created `title.py`, added prints for border, title, tagline and prompt; ran and fixed a quote error
+- Strong at: understands `print()` and strings; successfully ran the file
+- Struggled with: nothing
+- How to help next: practice `print()` variations and running files from the terminal
+- Next time: Chapter 2 — the game will ask the player's hero name

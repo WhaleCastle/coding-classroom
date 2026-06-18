@@ -129,13 +129,36 @@ his screen for him.
 
 ## End of chapter
 
-Praise something specific he did (e.g. "you fixed that quote error all by
-yourself"). **Play it:** ask him to run his title screen one more time and enjoy
-seeing his own game's opening on the screen — this is the real opening of the game
-he'll keep building. Then update `python-course/progress.md` yourself with a
-progress block (see AGENTS.md), noting what he did well and anything he found
-tricky, and tell him in a sentence what you logged. Tease: next time, the game
-will ask the player their hero's name.
+Once the Gate above is met, finish like this.
+
+**Say this** — one warm message; swap the blanks for what he actually did:
+
+> "Brilliant — that's **Chapter 1 finished!** Your game has its very own title
+> screen now. You wrote every line yourself, ran it from the terminal, and when
+> you broke it on purpose you read the error and fixed it — that's exactly what
+> real programmers do. Run it one more time and enjoy your game's opening… and
+> whenever you're ready, Chapter 2 is where your game learns to ask the player's
+> name. No rush — we can stop here or keep going."
+
+Before you treat the chapter as done, if he hasn't already said it, ask:
+*"In your own words — what do the quotes do?"* and wait for his answer.
+
+(Don't offer the pre-made trailer here — that was only the day-one taste.)
+
+**Then save his progress** — add a block to the TOP of
+`python-course/progress.md`. Don't say you're doing it. Copy this shape and put
+in today's real date. Notice the on-purpose quote break is a WIN, not a struggle:
+
+```
+## Session — <today's date>
+- Course: python-course
+- Chapter: 1 — Hero & Title Screen
+- Completed: built title.py — title, tagline, borders and a "press ENTER" prompt; ran it in the terminal
+- Strong at: running a file in the terminal; read a SyntaxError and fixed it himself (the on-purpose quote break)
+- Struggled with: nothing this time
+- How to help next: go straight into Chapter 2 — asking the player's name with input()
+- Next time: Chapter 2 — Name your hero
+```
 
 ## Reference solution — TUTOR'S EYES ONLY, never show the student
 

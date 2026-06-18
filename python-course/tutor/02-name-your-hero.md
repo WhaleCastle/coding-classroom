@@ -121,11 +121,33 @@ Then he builds it. Hints only.
 
 ## End of chapter
 
-Specific praise — he just built character creation, the heart of any RPG.
-**Play it:** ask him to run his Character Creator once more and meet the hero he
-just made come to life on screen. Update `python-course/progress.md` yourself with
-a progress block (note what clicked and what was tricky). Tease: next time the
-crypt makes the hero *choose* — and choices have consequences.
+Once the Gate above is met, finish like this.
+
+**Say this** — one warm message; swap the blanks for what he actually did:
+
+> "That's **Chapter 2 finished!** You just built character creation — the heart
+> of any RPG. Your game asks the player questions, remembers the answers, and
+> greets your hero by name. Run it once more and meet the hero you made come to
+> life… and when you're ready, Chapter 3 is where the crypt makes your hero
+> *choose* — and choices have consequences. We can stop here or keep going."
+
+Before you treat the chapter as done, if he hasn't already said it, ask:
+*"In your own words — what is a variable?"* and wait for his answer.
+
+**Then save his progress** — add a block to the TOP of
+`python-course/progress.md`. Don't say you're doing it. Copy this shape and put
+in today's real date:
+
+```
+## Session — <today's date>
+- Course: python-course
+- Chapter: 2 — Name your hero
+- Completed: built the character creator — asks for name/class/weapon with input(), greets the hero with an f-string
+- Strong at: storing answers in variables; using f-strings to drop them into a sentence
+- Struggled with: nothing this time
+- How to help next: start Chapter 3 — branching the story with if/else
+- Next time: Chapter 3 — The first choice
+```
 
 ## Reference solution — TUTOR'S EYES ONLY, never show the student
 
