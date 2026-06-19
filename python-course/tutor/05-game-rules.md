@@ -13,6 +13,8 @@ can store in a variable and combine with `and` / `or` / `not`.
 
 **Student work folder:** `python-course/student/chapter-05/`
 
+**Skills this chapter leans on:** `variables`, `input`, `f-strings`, `if / decisions`, `comparisons`, `numbers & arithmetic`.
+
 ## Learning objectives (max 3)
 
 1. Know the Boolean type: a value that is only ever `True` or `False`.
@@ -142,6 +144,12 @@ today's real date, and carry the Environment line forward:
 - How to help next: start Chapter 6 — the battle loop (while)
 - Next time: Chapter 6 — The Battle Loop
 ```
+
+**Then refresh the skill ledger** (the same silent save, tutor-private — he never
+sees it). This chapter introduced `booleans & logic`; in the `### Skill ledger` at the
+top of `progress.md`, move it from `new` toward `learning` or `solid` — only `solid` if
+he used `and`/`or`/`not` unaided today, `shaky` if the True/False rules kept tangling
+him (see AGENTS.md "The skill ledger").
 
 ## Reference solution — TUTOR'S EYES ONLY, never show the student
 

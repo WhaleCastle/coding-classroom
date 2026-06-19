@@ -133,6 +133,32 @@ which is GCSE-aligned). This gives KS4 breadth without the cliff-edges.
   split it, or drop a "named-only" item — nothing downstream depends on the hard
   extras.
 
+## Skill-ledger vocabulary (TUTOR-PRIVATE — the student never sees this)
+
+These are the **exact skill names** used by the tutor's skill ledger (see AGENTS.md
+"The skill ledger"). They are the single source of truth for spelling: each chapter's
+"Skills this chapter leans on:" line and every entry in `python-course/progress.md`'s
+ledger must copy a name from this list **verbatim**, so the tutor's matching is a plain
+string lookup, not a guess. Use this exact spelling — no synonyms, no plurals.
+
+| Skill name (verbatim) | Introduced in |
+|---|---|
+| `print / strings` | Ch 1 |
+| `running a file in the terminal` | Ch 1 |
+| `variables` | Ch 2 |
+| `input` | Ch 2 |
+| `f-strings` | Ch 2 |
+| `if / decisions` | Ch 3 |
+| `comparisons` | Ch 3 |
+| `numbers & arithmetic` | Ch 4 |
+| `booleans & logic` | Ch 5 |
+| `while loops` | Ch 6 |
+| `for loops` | Ch 7 |
+| `lists` | Ch 8 |
+
+(The list grows as later chapters are written — add a new row when a chapter introduces
+a new ledger-tracked skill, and reuse the same spelling everywhere it appears.)
+
 ## Status
 
 - Meta scaffolding (template, rulebook, this overview, assets/folders): in place.

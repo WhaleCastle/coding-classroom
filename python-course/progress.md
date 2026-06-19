@@ -12,6 +12,21 @@ itself — the student no longer has to. Newest session sits at the top of the l
 - Current chapter: 2 — Name your hero (Chapter 1 complete)
 - Chapters completed: 1 — Hero & Title Screen
 
+### Skill ledger  (my private memory of where he is — he never sees this)
+
+- print / strings: learning
+- running a file in the terminal: learning
+- variables: new
+- input: new
+- f-strings: new
+- if / decisions: new
+- comparisons: new
+- numbers & arithmetic: new
+- booleans & logic: new
+- while loops: new
+- for loops: new
+- lists: new
+
 ## Session log (newest first)
 
 <!-- The tutor adds each new session block directly below this line. -->

@@ -17,6 +17,8 @@ This is a milestone chapter: at the end you may offer the playable trailer
 
 **Student work folder:** `python-course/student/chapter-06/`
 
+**Skills this chapter leans on:** `variables`, `f-strings`, `if / decisions`, `comparisons`, `numbers & arithmetic`, `booleans & logic`.
+
 ## Learning objectives (max 3)
 
 1. Use a `while` loop to repeat steps until a condition is false.
@@ -161,6 +163,12 @@ today's real date, and carry the Environment line forward:
 - How to help next: start Chapter 7 — for loops and counting
 - Next time: Chapter 7 — Counting & Rolling
 ```
+
+**Then refresh the skill ledger** (the same silent save, tutor-private — he never
+sees it). This chapter introduced `while loops`; in the `### Skill ledger` at the top
+of `progress.md`, move it from `new` toward `learning` or `solid` — only `solid` if he
+built the loop and its stop-condition unaided today, `shaky` if the loop ran forever or
+the `break` confused him (see AGENTS.md "The skill ledger").
 
 ## Reference solution — TUTOR'S EYES ONLY, never show the student
 

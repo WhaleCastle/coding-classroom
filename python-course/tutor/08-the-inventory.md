@@ -12,6 +12,8 @@ through a list. Watch for the classic off-by-one with indexes (lists start at 0)
 
 **Student work folder:** `python-course/student/chapter-08/`
 
+**Skills this chapter leans on:** `variables`, `f-strings`, `for loops`.
+
 ## Learning objectives (max 3)
 
 1. Make a list and add/remove items (`append`, `remove`).
@@ -141,6 +143,12 @@ today's real date, and carry the Environment line forward:
 - How to help next: start Chapter 9 — dictionaries (the character sheet)
 - Next time: Chapter 9 — The Character Sheet
 ```
+
+**Then refresh the skill ledger** (the same silent save, tutor-private — he never
+sees it). This chapter introduced `lists`; in the `### Skill ledger` at the top of
+`progress.md`, move it from `new` toward `learning` or `solid` — only `solid` if he
+created and changed the list (append/remove/index) unaided today, `shaky` if indexing
+from 0 or the methods kept tripping him (see AGENTS.md "The skill ledger").
 
 ## Reference solution — TUTOR'S EYES ONLY, never show the student
 

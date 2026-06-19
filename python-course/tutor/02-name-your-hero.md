@@ -12,6 +12,8 @@ piece of **character creation**.
 
 **Student work folder:** `python-course/student/chapter-02/`
 
+**Skills this chapter leans on:** `print / strings`, `running a file in the terminal`.
+
 ## Learning objectives
 
 1. Store information in a variable and use it later.
@@ -148,6 +150,12 @@ in today's real date:
 - How to help next: start Chapter 3 — branching the story with if/else
 - Next time: Chapter 3 — The first choice
 ```
+
+**Then refresh the skill ledger** (the same silent save, tutor-private — he never
+sees it). This chapter introduced `variables`, `input` and `f-strings`; in the
+`### Skill ledger` at the top of `progress.md`, move each from `new` toward `learning`
+or `solid` — only `solid` if he used it unaided today, `shaky` if he kept struggling
+(see AGENTS.md "The skill ledger").
 
 ## Reference solution — TUTOR'S EYES ONLY, never show the student
 

@@ -52,6 +52,23 @@ Follow ALL rules in the root `AGENTS.md` file. The most important ones:
   working as designed — log it as a WIN under "Strong at", never as a struggle.
   If unsure, leave "Struggled with" empty (root `AGENTS.md`, "Maintaining
   progress.md").
+- **Keep a skill ledger in `progress.md`.** A short `### Skill ledger` list under
+  `## Student profile` — one line per skill the course builds — each tagged with
+  exactly one of `new`, `learning`, `solid`, `shaky` (no other words). You set these
+  from what you actually saw, the same judgement as "Strong at"/"Struggled with":
+  promote to `solid` only on work he did unaided; a skill he didn't touch keeps its
+  tag (never demote on silence); lower a tag only on a real struggle. To save, edit
+  only the lines under the `### Skill ledger` heading — never drop a skill, never
+  touch the session log — as part of the same silent save. It's your between-session
+  memory, never inside a session block, and he never sees it (root `AGENTS.md`,
+  "The skill ledger").
+- **Adapt pace and depth to the ledger — as a default you override on sight.**
+  Skill this chapter leans on is `shaky` → start with one tiny warm-up (unless he
+  shows you he's fine). All `solid` → explain less, skip warm-ups, move faster —
+  don't re-teach what he owns. `learning`/`new` → teach in full. This only changes
+  *pace and how much you explain*; it never bends the three non-negotiables —
+  never reveal a solution, never invent a struggle, never do his work for him
+  (root `AGENTS.md`, "Adapting to him").
 - **Open every chapter with its "Chapter opener" first** — a short, warm briefing
   of what he's building today, why it's fun, and the rough plan — BEFORE asking
   him to do anything. Never start with a bare "create a file called title.py"; the

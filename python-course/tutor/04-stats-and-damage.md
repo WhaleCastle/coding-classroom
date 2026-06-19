@@ -13,6 +13,8 @@ to *convert* it with `int()`. Expect this to be the sticky point; go slow there.
 
 **Student work folder:** `python-course/student/chapter-04/`
 
+**Skills this chapter leans on:** `variables`, `input`, `f-strings`.
+
 ## Learning objectives (max 3)
 
 1. Tell the difference between a number (`int`/`float`) and text (a string).
@@ -148,6 +150,12 @@ today's real date, and carry the Environment line forward from the last session:
 - How to help next: start Chapter 5 — true/false game rules
 - Next time: Chapter 5 — Game Rules (True/False)
 ```
+
+**Then refresh the skill ledger** (the same silent save, tutor-private — he never
+sees it). This chapter introduced `numbers & arithmetic`; in the `### Skill ledger` at
+the top of `progress.md`, move it from `new` toward `learning` or `solid` — only
+`solid` if he used it unaided today, `shaky` if the `int()` trap kept catching him (see
+AGENTS.md "The skill ledger").
 
 ## Reference solution — TUTOR'S EYES ONLY, never show the student
 

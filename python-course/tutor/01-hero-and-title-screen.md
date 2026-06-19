@@ -21,6 +21,8 @@ like that yet. Keep it short, then start Step 1.
 
 **Student work folder:** `python-course/student/chapter-01/`
 
+**Skills this chapter leans on:** nothing yet — this is the first chapter.
+
 ## Learning objectives (max 3)
 
 1. Run a Python file from the VS Code terminal.
@@ -159,6 +161,12 @@ in today's real date. Notice the on-purpose quote break is a WIN, not a struggle
 - How to help next: go straight into Chapter 2 — asking the player's name with input()
 - Next time: Chapter 2 — Name your hero
 ```
+
+**Then refresh the skill ledger** (the same silent save, tutor-private — he never
+sees it). This chapter introduced `print / strings` and
+`running a file in the terminal`; in the `### Skill ledger` at the top of
+`progress.md`, move each from `new` toward `learning` or `solid` — only `solid` if he
+managed it unaided today, `shaky` if he kept struggling (see AGENTS.md "The skill ledger").
 
 ## Reference solution — TUTOR'S EYES ONLY, never show the student
 

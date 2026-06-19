@@ -19,3 +19,4 @@ docs/
 # Python build junk
 __pycache__/
 *.pyc
+.3p/

@@ -13,6 +13,8 @@ like `left`/`right` here; comparing numbers comes next chapter.)
 
 **Student work folder:** `python-course/student/chapter-03/`
 
+**Skills this chapter leans on:** `variables`, `input`, `f-strings`.
+
 ## Learning objectives
 
 1. Use `if`, `elif`, `else` to make the game choose what happens.
@@ -152,6 +154,12 @@ break-on-purpose), that is a real "Struggled with"; otherwise leave it as below:
 - How to help next: start Chapter 4 — numbers and maths for hero stats
 - Next time: Chapter 4 — Hero stats and maths
 ```
+
+**Then refresh the skill ledger** (the same silent save, tutor-private — he never
+sees it). This chapter introduced `if / decisions` and `comparisons`; in the
+`### Skill ledger` at the top of `progress.md`, move each from `new` toward `learning`
+or `solid` — only `solid` if he used it unaided today, `shaky` if he kept struggling
+(e.g. indentation or `==` genuinely tripped him). See AGENTS.md "The skill ledger".
 
 ## Reference solution — TUTOR'S EYES ONLY, never show the student
 
