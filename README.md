@@ -10,7 +10,8 @@ the student types every line of code himself.
   the student's code"), session flow. Read automatically by Copilot and Cursor.
 - `.github/agents/tutor.agent.md` — a custom tutor agent for VS Code Copilot
   Chat. It is told never to write the student's code or run his programs — it
-  only edits its own `progress.md` log — so the student always does the work.
+  only edits its own two log files (`progress.md` and the hero character sheet
+  `hero-sheet.md`) — so the student always does the work.
 - `python-course/`, `vscode-basics/` — one folder per course. Each contains
   `tutor/` (one fully-scripted lesson file per chapter), `student/` (the
   student's own work, one folder per chapter), and `progress.md` (the tutor's
@@ -36,20 +37,21 @@ strictly in role: anything unrelated to the courses is politely declined.
    keeps a progress log) but turn OFF anything that runs terminal commands — the
    student runs his code himself. If the tutor agent doesn't appear, **Ask mode**
    works too, but it can't keep the progress log (you'd update it by hand).
-5. **(One-time) Let the tutor save its log without nagging.** So the student
-   isn't asked to click "Keep" every time the tutor updates `progress.md`, add
-   this to your VS Code **user** settings — `Cmd/Ctrl+Shift+P` → **Preferences:
-   Open User Settings (JSON)** — then reload VS Code:
+5. **(One-time) Let the tutor save its logs without nagging.** So the student
+   isn't asked to click "Keep" every time the tutor updates its log or the hero
+   sheet, add this to your VS Code **user** settings — `Cmd/Ctrl+Shift+P` →
+   **Preferences: Open User Settings (JSON)** — then reload VS Code:
 
    ```jsonc
    "chat.tools.edits.autoApprove": {
-     "**/progress.md": true
+     "**/progress.md": true,
+     "**/hero-sheet.md": true
    }
    ```
 
-   This auto-keeps edits to `progress.md` only — every other file still asks
-   first, and the student always runs his own code in the terminal. (It's per
-   machine, and the only files it ever touches are ones named `progress.md`.)
+   This auto-keeps edits to `progress.md` and `hero-sheet.md` only — every other
+   file still asks first, and the student always runs his own code in the terminal.
+   (It's per machine, and the only files it ever touches are those two log files.)
 6. The student types: `Hi! I'm ready for my Python lesson.` — and off you go.
 
 ## Daily session

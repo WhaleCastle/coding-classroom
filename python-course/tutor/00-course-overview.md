@@ -86,6 +86,33 @@ the UK Key Stage 3–4 Computer Science curriculum** (see the coverage map below
 | B1 | *(Optional)* Draw Your Hero | read & tweak a given PIL program | Recolour / restyle the given sprite |
 | B2 | *(Optional)* Monster Database | SQL via `sqlite3` | Store & query monsters/items in a table |
 
+## Boss-fight checkpoints & the hero sheet
+
+Every 3rd chapter is followed by a **boss-fight checkpoint** (`boss-NN-*.md`) — a short,
+**unaided** test where the student combines the previous chapters' skills with the tutor
+muted. Placement and what each tests:
+
+| Boss | After Ch | Tests (earlier-chapter skills) |
+|------|----------|--------------------------------|
+| I — The Gate Guardian | 3 | print/strings, variables, input, f-strings, if/decisions, comparisons |
+| II — The Pit Brawler | 6 | + numbers & arithmetic, booleans & logic, while loops |
+| III | 9 | + for loops, lists, dictionaries |
+| IV | 12 | + functions, return, random |
+| V | 15 | + strings, 2D maze, dialogue |
+| VI | 18 | + files/save, hardening, search & sort |
+| Final Boss | (Ch 20 capstone) | everything |
+
+A boss is run with the tutor silent (it sets the scene, then stops teaching); a hint
+costs the student XP. A win awards XP, a level, a trophy, and ⭐ Mastered on those skills.
+Full rules: AGENTS.md "Boss-fight checkpoints". Build order: write each boss in the same
+batch as (or just after) the chapters it tests — Bosses I–II are buildable now (ch 1–6
+exist); III onward follow their chapters.
+
+The student also has a **hero character sheet** (`python-course/hero-sheet.md`) — a
+tutor-kept, D&D-style record of his Level, XP, ability scores, spellbook of skills, and
+trophies, which he gets to SEE (his trophy cabinet, the celebratory mirror of the private
+skill ledger). XP/level economy and rank mappings: AGENTS.md "The hero character sheet".
+
 ## KS3–4 coverage map (check nothing is missed)
 
 Sources: National Curriculum *Computing programmes of study, KS3 & KS4*; AQA GCSE
