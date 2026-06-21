@@ -7,15 +7,17 @@ The **second boss-fight checkpoint**, played right after Chapter 6. It tests Cha
 loop) — **with you muted**. Deliver the briefing and trials, then **stop teaching**: no
 steps, no reminders, no leading questions. Let him build it and show you when it runs.
 
-- **Hints cost XP, and a paid hint is ONLY a question.** 25+ XP → for 25 XP ask **one** of
-  the safe nudges below (no code, no keywords, no variable names, nothing that mirrors the
-  answer); under 25 XP → encourage another attempt. Safe nudge bank: *"What has to be true
-  for the fight to keep going?"* · *"What makes the loop finally stop?"* · *"After each hit,
-  what should happen to a fighter's HP?"* · *"Once the fight is over, how does your program
-  decide who won?"*
+- **Hints cost XP, and a paid hint is ONLY a question.** If he asks: **read** the XP on his
+  hero sheet — if it's 25+, record `boss_hints_used` +1 in `progress.md` (the script subtracts
+  the 25; you never do XP maths) and ask **one** of the safe nudges below (no code, no
+  keywords, no variable names, nothing that mirrors the answer); under 25 XP → encourage
+  another attempt. Safe nudge bank: *"What has to be true for the fight to keep going?"* ·
+  *"What makes the loop finally stop?"* · *"After each hit, what should happen to a fighter's
+  HP?"* · *"Once the fight is over, how does your program decide who won?"*
 - **Judge on the success criteria, not your reference.** Many fights win.
-- **A win** = +50 XP, Level +1, the trophy "Bested the Pit Brawler", and ⭐ Mastered on
-  `numbers & arithmetic`, `booleans & logic`, `while loops` (plus keeping his earlier ⭐).
+- **A win** = record `boss-02` in `bosses_won` (`progress.md`); the script then grants the
+  trophy "Bested the Pit Brawler", +50 XP, and ⭐ Mastered on `numbers & arithmetic`,
+  `booleans & logic`, `while loops` (and keeps his earlier ⭐). You never compute the rewards.
 - **A miss never blocks him.** No penalty: drop out of boss mode, go back to your normal
   teaching self on Chapter 5 (the `and` rule) or Chapter 6 (the battle loop and what stops
   it) — full hints — and let him carry on to Chapter 7. The Brawler waits for a rematch (a
@@ -65,15 +67,27 @@ Then go quiet.
 
 ## On a win / On a miss   (required)
 
-**On a win — say this** (swap the blanks):
+**On a win — record the fact, then celebrate.** Add `boss-02` to `bosses_won` in
+`progress.md`. **That is the only bookkeeping you do** — the script then awards the trophy,
+the +50 XP, and the ⭐ Mastered spells, and sets his new rank on the sheet. To celebrate,
+check one thing: **is this his 2nd or 4th boss won?** If yes it's a class promotion → say
+script (A); otherwise → say script (B).
 
-> "The Brawler hits the dirt — **you win the pit fight!** 🏆 You built a real battle loop:
-> numbers, true/false logic and a loop that knows exactly when to stop — all yourself.
-> That earns the trophy **Bested the Pit Brawler**, **+50 XP**, **Level ___**, and ⭐
-> **Mastered** on your maths, your logic, and your loops. Want to see your character sheet?
-> Next up, Chapter 7 — counting and rolling dice."
+**(A) PROMOTION (this is his 2nd or 4th boss) — say (the sheet shows the exact new rank):**
 
-Then update `hero-sheet.md` (XP, level, trophy, ⭐ skills) and show it off.
+> "The Brawler hits the dirt — **you win the pit fight!** 🏆 You built a real battle loop —
+> numbers, true/false logic and a loop that stops at just the right moment — all yourself. A
+> new trophy, spells turned ⭐ **Mastered**, and **you've earned a new rank**! 🎉 Open your
+> hero sheet and see your new title — then on to your next quest, hero!"
+
+**(B) NO PROMOTION (any other count) — say instead:**
+
+> "The Brawler hits the dirt — **you win the pit fight!** 🏆 You built a real battle loop
+> all by yourself — a new trophy, and ⭐ **Mastered** on your maths, your logic, and your
+> loops. Open your hero sheet and see — then on to your next quest, hero!"
+
+When you send him onward, name his REAL next quest (Chapter 7, counting & rolling dice, on a
+normal run; or wherever he actually is if this was a rematch).
 
 **On a miss — say this:**
 

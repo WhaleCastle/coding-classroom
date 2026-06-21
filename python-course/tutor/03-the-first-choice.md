@@ -41,7 +41,7 @@ like `left`/`right` here; comparing numbers comes next chapter.)
 Before any step, set the scene. Say something like: *"So far your game does the
 exact same thing every time you run it. Today it learns to make a **choice** — the
 hero reaches a fork in the tunnel, and what happens next depends on what the player
-picks. By the end you'll have a door that only opens for the right answer! We'll
+picks. By the end you'll have a door that only opens for the right answer! Making choices is how *every* program reacts — every menu, every 'are you sure?', every game-over check is a choice like this — so you'll reach for it whenever your program must do different things in different situations. We'll
 build up one fork at a time. Ready?"* Keep it short and warm, then start Step 1.
 
 ## Guided steps
@@ -154,6 +154,8 @@ break-on-purpose), that is a real "Struggled with"; otherwise leave it as below:
 - How to help next: start Chapter 4 — numbers and maths for hero stats
 - Next time: Chapter 4 — Hero stats and maths
 ```
+
+**Then update the `### Facts`** in `progress.md`: `chapters_cleared` +1 (and +1 to `mini_challenges_done` / `predict_wins` / `break_it_fixes` for any that happened today) — the script turns these into his new Level, XP and spells.
 
 **Then refresh the skill ledger** (the same silent save, tutor-private — he never
 sees it). This chapter introduced `if / decisions` and `comparisons`; in the

@@ -1,0 +1,36 @@
+{
+  // Keeps the student's hero-sheet.md current. The "watch" task starts when the folder
+  // opens and re-renders the sheet within ~2s of any change to progress.md — so a level-up
+  // or boss win shows up immediately, with no terminal needed by the tutor and no manual step.
+  // The first time VS Code sees this, it asks to "Allow Automatic Tasks" — choose Allow.
+  // To force a one-off render: Terminal → Run Task… → "Render hero sheet (once)".
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Hero sheet — auto-update (watch)",
+      "type": "shell",
+      "command": "python3 tools/render_sheet.py --watch",
+      "windows": { "command": "python tools/render_sheet.py --watch" },
+      "isBackground": true,
+      "presentation": { "reveal": "silent", "panel": "dedicated", "showReuseMessage": false },
+      "runOptions": { "runOn": "folderOpen" },
+      "problemMatcher": {
+        "owner": "render-sheet",
+        "pattern": { "regexp": "^__never_matches__$" },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "render_sheet: watching",
+          "endsPattern": "render_sheet: rendered"
+        }
+      }
+    },
+    {
+      "label": "Render hero sheet (once)",
+      "type": "shell",
+      "command": "python3 tools/render_sheet.py",
+      "windows": { "command": "python tools/render_sheet.py" },
+      "presentation": { "reveal": "silent", "panel": "shared", "close": true },
+      "problemMatcher": []
+    }
+  ]
+}

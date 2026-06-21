@@ -10,8 +10,9 @@ the student types every line of code himself.
   the student's code"), session flow. Read automatically by Copilot and Cursor.
 - `.github/agents/tutor.agent.md` — a custom tutor agent for VS Code Copilot
   Chat. It is told never to write the student's code or run his programs — it
-  only edits its own two log files (`progress.md` and the hero character sheet
-  `hero-sheet.md`) — so the student always does the work.
+  only edits its own `progress.md` log — so the student always does the work.
+  (His D&D-style `hero-sheet.md` is generated from `progress.md` by a small
+  script, `tools/render_sheet.py` — the tutor never edits the sheet itself.)
 - `python-course/`, `vscode-basics/` — one folder per course. Each contains
   `tutor/` (one fully-scripted lesson file per chapter), `student/` (the
   student's own work, one folder per chapter), and `progress.md` (the tutor's
@@ -37,22 +38,31 @@ strictly in role: anything unrelated to the courses is politely declined.
    keeps a progress log) but turn OFF anything that runs terminal commands — the
    student runs his code himself. If the tutor agent doesn't appear, **Ask mode**
    works too, but it can't keep the progress log (you'd update it by hand).
-5. **(One-time) Let the tutor save its logs without nagging.** So the student
-   isn't asked to click "Keep" every time the tutor updates its log or the hero
-   sheet, add this to your VS Code **user** settings — `Cmd/Ctrl+Shift+P` →
-   **Preferences: Open User Settings (JSON)** — then reload VS Code:
+5. **(One-time) Let the tutor save its log without nagging.** So the student
+   isn't asked to click "Keep" every time the tutor updates its log, add this to
+   your VS Code **user** settings — `Cmd/Ctrl+Shift+P` → **Preferences: Open User
+   Settings (JSON)** — then reload VS Code:
 
    ```jsonc
    "chat.tools.edits.autoApprove": {
-     "**/progress.md": true,
-     "**/hero-sheet.md": true
+     "**/progress.md": true
    }
    ```
 
-   This auto-keeps edits to `progress.md` and `hero-sheet.md` only — every other
-   file still asks first, and the student always runs his own code in the terminal.
-   (It's per machine, and the only files it ever touches are those two log files.)
-6. The student types: `Hi! I'm ready for my Python lesson.` — and off you go.
+   This auto-keeps edits to `progress.md` only — every other file still asks first,
+   and the student always runs his own code in the terminal. (It's per machine, and
+   `progress.md` is the only file the tutor ever touches.)
+6. **The hero character sheet builds itself.** `python-course/hero-sheet.md` (his
+   D&D Level / XP / spells / trophies) is generated from `progress.md` by
+   `tools/render_sheet.py`. A VS Code task (in `.vscode/tasks.json`) starts a small
+   background **watcher** when you open the folder, which re-renders the sheet within
+   a couple of seconds of any change to `progress.md` — so a level-up shows up the
+   moment the tutor saves. **The first time, VS Code asks "Allow Automatic Tasks?" —
+   choose Allow** (otherwise the sheet won't auto-update). To force a one-off render:
+   Terminal → Run Task… → **Render hero sheet (once)**, or run
+   `python3 tools/render_sheet.py`. (The tutor only records the facts in
+   `progress.md`; it never edits the sheet.)
+7. The student types: `Hi! I'm ready for my Python lesson.` — and off you go.
 
 ## Daily session
 

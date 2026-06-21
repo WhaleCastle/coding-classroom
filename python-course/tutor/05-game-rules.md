@@ -39,7 +39,7 @@ can store in a variable and combine with `and` / `or` / `not`.
 Say something like: *"Your game can count now. Today it learns to **decide things
 for itself** — the rules every game runs on: is the hero alive? does he have the
 key AND the courage to go on? By the end you'll have a little **rule book** for
-your RPG that answers these with a clean `True` or `False`. We'll meet Python's
+your RPG that answers these with a clean `True` or `False`. Any yes/no rule in any program — a password check, 'can he afford it?', 'is it game over?' — is built from exactly this, so it's a tool you'll use forever. We'll meet Python's
 yes/no value, make rules out of comparisons, then join them with `and`, `or` and
 `not`. Ready? Let's write the laws of your world."* Keep it warm, then start
 Step 1.
@@ -144,6 +144,8 @@ today's real date, and carry the Environment line forward:
 - How to help next: start Chapter 6 — the battle loop (while)
 - Next time: Chapter 6 — The Battle Loop
 ```
+
+**Then update the `### Facts`** in `progress.md`: `chapters_cleared` +1 (and +1 to `mini_challenges_done` / `predict_wins` / `break_it_fixes` for any that happened today) — the script turns these into his new Level, XP and spells.
 
 **Then refresh the skill ledger** (the same silent save, tutor-private — he never
 sees it). This chapter introduced `booleans & logic`; in the `### Skill ledger` at the

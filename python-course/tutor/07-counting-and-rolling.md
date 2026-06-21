@@ -41,7 +41,7 @@ him it's coming in Chapter 12 and keep him counting for now.
 Say something like: *"Last time your loop fought until the goblin dropped. Today
 you get the other kind of loop — one that repeats a set number of times, perfect
 for **drawing**. By the end you'll have a proper **HP bar** for your RPG —
-`♥ ♥ ♥ . .` — drawn by a loop, plus a neat way to count things up. We'll meet the
+`♥ ♥ ♥ . .` — drawn by a loop, plus a neat way to count things up. Any time you need to do something a *set number of times* — draw ten hearts, take three steps, count to a hundred — that's a `for` loop, so you'll use it everywhere. We'll meet the
 `for` loop and `range()`, use the changing number, and even peek at loops inside
 loops to make a little grid. Ready? Let's draw some hearts."* Keep it warm, then
 start Step 1.
@@ -146,6 +146,8 @@ today's real date, and carry the Environment line forward:
 - How to help next: start Chapter 8 — lists (the backpack)
 - Next time: Chapter 8 — The Inventory
 ```
+
+**Then update the `### Facts`** in `progress.md`: `chapters_cleared` +1 (and +1 to `mini_challenges_done` / `predict_wins` / `break_it_fixes` for any that happened today) — the script turns these into his new Level, XP and spells.
 
 **Then refresh the skill ledger** (the same silent save, tutor-private — he never
 sees it). This chapter introduced `for loops`; in the `### Skill ledger` at the top of

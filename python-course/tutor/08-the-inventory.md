@@ -39,7 +39,7 @@ through a list. Watch for the classic off-by-one with indexes (lists start at 0)
 
 Say something like: *"Every variable so far has held just one thing. Today your
 hero gets a **backpack** — one variable that holds a whole list of items he can
-pick up and drop. By the end you'll have a working **inventory** for your RPG: add
+pick up and drop. And lists aren't just for a backpack — any time you need to hold *many of something* (a high-score table, a party of monsters, a playlist) you'll reach for a list. By the end you'll have a working **inventory** for your RPG: add
 loot, drop what you don't want, and list everything you're carrying. We'll make a
 list, add and remove from it, count it, and walk through it with a `for` loop.
 Ready? Let's pack the bag."* Keep it warm, then start Step 1.
@@ -143,6 +143,8 @@ today's real date, and carry the Environment line forward:
 - How to help next: start Chapter 9 — dictionaries (the character sheet)
 - Next time: Chapter 9 — The Character Sheet
 ```
+
+**Then update the `### Facts`** in `progress.md`: `chapters_cleared` +1 (and +1 to `mini_challenges_done` / `predict_wins` / `break_it_fixes` for any that happened today) — the script turns these into his new Level, XP and spells.
 
 **Then refresh the skill ledger** (the same silent save, tutor-private — he never
 sees it). This chapter introduced `lists`; in the `### Skill ledger` at the top of

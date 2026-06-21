@@ -6,11 +6,28 @@ itself — the student no longer has to. Newest session sits at the top of the l
 ## Student profile
 
 - Level: Year 8, complete beginner
+- Goes by: (ask at the first session — "what should I call you?" — then record his name
+  here and use it every session; his hero's name is on `hero-sheet.md`)
 - Language: English (Cantonese explanations allowed if asked)
 - Environment: (ask at the next session — Windows or Mac? and does a file run with
   `python` or `python3`? — then record it here and carry it forward)
 - Current chapter: 2 — Name your hero (Chapter 1 complete)
 - Chapters completed: 1 — Hero & Title Screen
+
+### Facts  (you keep THESE up to date; `hero-sheet.md` is built from them by a script — you never edit the sheet)
+
+Just record what happened — simple counts and a list. The script turns these into his
+Level, XP, Class, spellbook, ability stars and trophies. Increment a number, or add to a
+list; never compute the sheet yourself.
+
+- hero_name: (he names his hero in Chapter 2 — set it then)
+- chapters_cleared: 1
+- bosses_won: (none)
+- mini_challenges_done: 1
+- predict_wins: 0
+- break_it_fixes: 1
+- boss_hints_used: 0
+- game_complete: no
 
 ### Skill ledger  (my private memory of where he is — he never sees this)
 

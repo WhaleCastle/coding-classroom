@@ -47,7 +47,7 @@ Before any step, briefly tell him the mission so he knows what's going on. Say
 something like: *"Today we're going to make the very first thing a player sees in
 your game — the **title screen**, the part that shows your game's name in big
 letters when it starts. By the end you'll run it and watch your own game's opening
-appear. We'll go in tiny steps: first we make an empty file to write in, then we
+appear. And printing words on the screen is how *every* program talks to a person — menus, messages, scores — so you'll do this in nearly everything you ever make. We'll go in tiny steps: first we make an empty file to write in, then we
 teach the computer to print one line of text, then you make it yours. Ready? Let's
 make that file."* Keep it warm and short, then start Step 1.
 
@@ -161,6 +161,8 @@ in today's real date. Notice the on-purpose quote break is a WIN, not a struggle
 - How to help next: go straight into Chapter 2 — asking the player's name with input()
 - Next time: Chapter 2 — Name your hero
 ```
+
+**Then update the `### Facts`** in `progress.md`: `chapters_cleared` +1 (and +1 to `mini_challenges_done` / `predict_wins` / `break_it_fixes` for any that happened today) — the script turns these into his new Level, XP and spells.
 
 **Then refresh the skill ledger** (the same silent save, tutor-private — he never
 sees it). This chapter introduced `print / strings` and

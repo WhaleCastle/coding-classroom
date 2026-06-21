@@ -38,7 +38,7 @@ piece of **character creation**.
 Before any step, set the scene. Say something like: *"Right now your game only
 talks AT the player. Today it's going to **listen**: it'll ask the player what
 their hero is called and then greet that hero by name — that's the very start of
-building a character. We'll do it in little steps: first we make a box to hold a
+building a character. Remembering an answer and using it later is the heart of every program — your name, your score, your settings all live in 'boxes' like these — so you'll lean on this constantly. We'll do it in little steps: first we make a box to hold a
 name, then we get the player to type one in, then we drop it into a friendly
 message. Ready?"* Keep it short and warm, then start Step 1.
 
@@ -150,6 +150,8 @@ in today's real date:
 - How to help next: start Chapter 3 — branching the story with if/else
 - Next time: Chapter 3 — The first choice
 ```
+
+**Then update the `### Facts`** in `progress.md`: `chapters_cleared` +1, **set `hero_name`** to the hero he just named, and +1 to `mini_challenges_done` / `predict_wins` / `break_it_fixes` for any that happened — the script turns these into his Level, XP, spells and his hero's name on the sheet.
 
 **Then refresh the skill ledger** (the same silent save, tutor-private — he never
 sees it). This chapter introduced `variables`, `input` and `f-strings`; in the
