@@ -198,15 +198,13 @@ def render(facts, c):
         bar = "★" * n + "☆" * (5 - n)
         content.append(fit(label, LABEL_W) + bar)
     spell_section = len(content)
-    CELL = 16                              # spellbook is a 3-column grid
-    row = []
-    for s in SKILL_ORDER:
-        entry = f"{c['ranks'][s]} {DISPLAY[s]}"
-        row.append(entry + " " * max(2, CELL - dwidth(entry)))   # >=2 spaces between cells
-        if len(row) == 3:
-            content.append("".join(row).rstrip()); row = []
-    if row:
-        content.append("".join(row).rstrip())
+    # spellbook is a 2-column grid; pad the first column to the WIDEST entry (+2 gap) so the
+    # second column starts at the same place on every row.
+    entries = [f"{c['ranks'][s]} {DISPLAY[s]}" for s in SKILL_ORDER]
+    COL = max(dwidth(e) for e in entries) + 2
+    for i in range(0, len(entries), 2):
+        pair = entries[i:i + 2]
+        content.append((fit(pair[0], COL) + (pair[1] if len(pair) > 1 else "")).rstrip())
     trophy_section = len(content)
     trophies = {"boss-01": "⚔️ Slew the Gate Guardian",
                 "boss-02": "⚔️ Bested the Pit Brawler"}
@@ -228,15 +226,18 @@ def render(facts, c):
         left = gap // 2
         return corner_l + "═" * left + cap + "═" * (gap - left) + corner_r
 
-    L = [divider("╔", "╗", "HERO CHARACTER SHEET")]
-    L.append(box(content[0]))                                    # name
-    L.append(box(content[1]))                                    # level / xp
-    L.append(divider("╠", "╣", "ABILITY SCORES"))
-    L.extend(box(t) for t in content[2:spell_section])
-    L.append(divider("╠", "╣", "SPELLBOOK"))
-    L.extend(box(t) for t in content[spell_section:trophy_section])
-    L.append(divider("╠", "╣", "TROPHIES"))
-    L.extend(box(t) for t in content[trophy_section:])
+    def section(div, rows):
+        # each section is wrapped in a blank box line top and bottom for breathing room
+        L.append(div)
+        L.append(box())
+        L.extend(box(t) for t in rows)
+        L.append(box())
+
+    L = []
+    section(divider("╔", "╗", "HERO CHARACTER SHEET"), content[0:2])
+    section(divider("╠", "╣", "ABILITY SCORES"), content[2:spell_section])
+    section(divider("╠", "╣", "SPELLBOOK"), content[spell_section:trophy_section])
+    section(divider("╠", "╣", "TROPHIES"), content[trophy_section:])
     L.append(divider("╚", "╝"))
     L.append(" ⭐ Mastered   ⚔️ Adept   🌱 Apprentice   🔒 Locked")
 
