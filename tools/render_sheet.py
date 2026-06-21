@@ -14,7 +14,7 @@ Usage:
 Default course folder: python-course/ (relative to repo root).
 """
 
-import re, sys, os, time
+import re, sys, os, time, unicodedata
 
 # ---- canonical course data (extend as later chapters are written) -------------
 # Skill -> the chapter that INTRODUCES it (drives 🔒 Locked vs 🌱 Apprentice).
@@ -153,39 +153,91 @@ def compute(facts, ledger):
                 bosses=len(facts["bosses"]), mastered=mastered)
 
 
+def dwidth(s):
+    """On-screen width of a string in a monospace code block. Emoji/CJK glyphs take 2
+    columns; the invisible variation-selector / zero-width-joiner / combining marks they
+    carry take 0. Plain `len()` miscounts these (e.g. 🛠️ and ⚔️ each hide one extra
+    codepoint), which is why padding by len() left the star bars ragged — so every column
+    in this sheet is measured and padded by dwidth instead."""
+    w = 0
+    for ch in s:
+        o = ord(ch)
+        if ch in ("️", "︎", "‍") or unicodedata.combining(ch):
+            continue
+        # ★/☆ live in the "wide" 0x2600-0x27BF block but render as 1-column text symbols
+        # (no emoji presentation), so the star bars must be counted as width 1, not 2.
+        if o in (0x2605, 0x2606):
+            w += 1
+        elif (unicodedata.east_asian_width(ch) in ("W", "F")
+                or 0x1F000 <= o <= 0x1FAFF or 0x2600 <= o <= 0x27BF or o == 0x2B50):
+            w += 2
+        else:
+            w += 1
+    return w
+
+
 def render(facts, c):
     star_order = [
         "🧠 LOGIC  (decisions, true/false)", "🔁 STAMINA (loops)",
         "🎒 LORE   (lists & records)", "🛠️ DEBUGGING (fixing errors)",
         "✨ CREATIVITY (your own designs)",
     ]
-    L = []
-    L.append("╔═══════════ HERO CHARACTER SHEET ═══════════╗")
-    L.append(f"  Name: {facts['hero_name']}     Class: {c['cls']}")
-    L.append(f"  Level {c['level']}     XP: {c['xp']}     Bosses slain: {c['bosses']}")
-    L.append("╠══════════════ ABILITY SCORES ══════════════╣")
+
+    # --- build the inner content rows as plain text first; the box is sized to fit them
+    # (so a long hero name or a future trophy can never overflow the borders). ---
+    def fit(text, width):                 # left-justify to a display width
+        return text + " " * max(0, width - dwidth(text))
+
+    content = [
+        f"Name: {facts['hero_name']}     Class: {c['cls']}",
+        f"Level {c['level']}     XP: {c['xp']}     Bosses slain: {c['bosses']}",
+    ]
+    LABEL_W = 34                           # ability label column -> star bars line up
     for label in star_order:
         n = c["stars"].get(label, 0)
         bar = "★" * n + "☆" * (5 - n)
-        L.append(f"  {label:<34}{bar}")
-    L.append("╠════════════════ SPELLBOOK ═════════════════╣")
+        content.append(fit(label, LABEL_W) + bar)
+    spell_section = len(content)
+    CELL = 16                              # spellbook is a 3-column grid
     row = []
     for s in SKILL_ORDER:
-        row.append(f"{c['ranks'][s]} {DISPLAY[s]}")
+        entry = f"{c['ranks'][s]} {DISPLAY[s]}"
+        row.append(entry + " " * max(2, CELL - dwidth(entry)))   # >=2 spaces between cells
         if len(row) == 3:
-            L.append("  " + "   ".join(row)); row = []
+            content.append("".join(row).rstrip()); row = []
     if row:
-        L.append("  " + "   ".join(row))
-    L.append("╠════════════════ TROPHIES ══════════════════╣")
+        content.append("".join(row).rstrip())
+    trophy_section = len(content)
     trophies = {"boss-01": "⚔️ Slew the Gate Guardian",
                 "boss-02": "⚔️ Bested the Pit Brawler"}
     won = [trophies[b] for b in facts["bosses"] if b in trophies]
-    if won:
-        for t in won:
-            L.append(f"  {t}")
-    else:
-        L.append("  (none yet — your first boss awaits after Chapter 3!)")
-    L.append("╚════════════════════════════════════════════╝")
+    content.extend(won if won
+                   else ["(none yet — your first boss awaits after Chapter 3!)"])
+
+    # --- size the box to the widest row, then draw every border + row to that width ---
+    INNER = max(dwidth(t) for t in content) + 2     # 1 lead + >=1 trail space
+
+    def box(t=""):
+        return "║ " + fit(t, INNER - 2) + " ║"
+
+    def divider(corner_l, corner_r, title=None):
+        if title is None:
+            return corner_l + "═" * INNER + corner_r
+        cap = f" {title} "
+        gap = INNER - dwidth(cap)
+        left = gap // 2
+        return corner_l + "═" * left + cap + "═" * (gap - left) + corner_r
+
+    L = [divider("╔", "╗", "HERO CHARACTER SHEET")]
+    L.append(box(content[0]))                                    # name
+    L.append(box(content[1]))                                    # level / xp
+    L.append(divider("╠", "╣", "ABILITY SCORES"))
+    L.extend(box(t) for t in content[2:spell_section])
+    L.append(divider("╠", "╣", "SPELLBOOK"))
+    L.extend(box(t) for t in content[spell_section:trophy_section])
+    L.append(divider("╠", "╣", "TROPHIES"))
+    L.extend(box(t) for t in content[trophy_section:])
+    L.append(divider("╚", "╝"))
     L.append(" ⭐ Mastered   ⚔️ Adept   🌱 Apprentice   🔒 Locked")
 
     body = "\n".join(L)
