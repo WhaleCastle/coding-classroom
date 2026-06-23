@@ -1,0 +1,28 @@
+╔════════════════ HERO CHARACTER SHEET ════════════════╗
+║                                                      ║
+║ Name: a new apprentice     Class: Code Apprentice    ║
+║ Level 1     XP: 35     Bosses slain: 0               ║
+║                                                      ║
+╠═══════════════════ ABILITY SCORES ═══════════════════╣
+║                                                      ║
+║ 🧠 LOGIC  (decisions, true/false) ☆☆☆☆☆              ║
+║ 🔁 STAMINA (loops)                ☆☆☆☆☆              ║
+║ 🎒 LORE   (lists & records)       ☆☆☆☆☆              ║
+║ 🛠️ DEBUGGING (fixing errors)      ★☆☆☆☆              ║
+║ ✨ CREATIVITY (your own designs)  ★☆☆☆☆              ║
+║                                                      ║
+╠═════════════════════ SPELLBOOK ══════════════════════╣
+║                                                      ║
+║ 🌱 print / strings   🌱 running a file               ║
+║ 🔒 variables         🔒 input                        ║
+║ 🔒 f-strings         🔒 if / decisions               ║
+║ 🔒 comparisons       🔒 numbers & maths              ║
+║ 🔒 booleans & logic  🔒 while loops                  ║
+║ 🔒 for loops         🔒 lists                        ║
+║                                                      ║
+╠══════════════════════ TROPHIES ══════════════════════╣
+║                                                      ║
+║ (none yet — your first boss awaits after Chapter 3!) ║
+║                                                      ║
+╚══════════════════════════════════════════════════════╝
+ ⭐ Mastered   ⚔️ Adept   🌱 Apprentice   🔒 Locked
