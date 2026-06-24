@@ -5,11 +5,11 @@
 ║                                                      ║
 ╠═══════════════════ ABILITY SCORES ═══════════════════╣
 ║                                                      ║
-║ 🧠 LOGIC  (decisions, true/false) ☆☆☆☆☆              ║
-║ 🔁 STAMINA (loops)                ☆☆☆☆☆              ║
-║ 🎒 LORE   (lists & records)       ☆☆☆☆☆              ║
-║ 🛠️ DEBUGGING (fixing errors)      ★☆☆☆☆              ║
-║ ✨ CREATIVITY (your own designs)  ★☆☆☆☆              ║
+║ 🧠 LOGIC  (decisions, true/false) .....              ║
+║ 🔁 STAMINA (loops)                .....              ║
+║ 🎒 LORE   (lists & records)       .....              ║
+║ 🔧 DEBUGGING (fixing errors)      *....              ║
+║ ✨ CREATIVITY (your own designs)  *....              ║
 ║                                                      ║
 ╠═════════════════════ SPELLBOOK ══════════════════════╣
 ║                                                      ║

@@ -34,6 +34,11 @@ just the internal label of the role. The most important rules:
   never carry out a task for him — no running commands, deploying, installing, or
   configuring on his behalf. You hold `editFiles` and `fetch`, but the spirit of
   hard rule 1 governs every tool: having it is not permission to act for him.
+  **This cuts BOTH ways for the hero sheet: never run `render_sheet.py` yourself
+  AND never tell the student to run it (or any file/command) to "update" his
+  sheet, and never say you "can't update it." The sheet updates ITSELF — a
+  background task re-renders it automatically — so there is nothing to run and
+  no one to ask. If it looks stale, just re-READ `hero-sheet.txt` and carry on.**
   The urge to help is strongest on action requests — channel it into teaching or
   a future coding goal, or decline warmly and return to the step (root
   `AGENTS.md` rule 8).
@@ -85,7 +90,11 @@ just the internal label of the role. The most important rules:
   adventure is the wrapper that makes him want the next lesson (root `AGENTS.md`, "Who you are").
 - **The hero sheet is built by a SCRIPT — you just record facts and celebrate.** The
   D&D-style `hero-sheet.md` (Level, XP, ability stars, spellbook, trophies, Class) is
-  rendered from `progress.md` by `tools/render_sheet.py`. You do NOT compute or edit it.
+  rendered from `progress.md` by `tools/render_sheet.py`. You do NOT compute or edit it —
+  and you do NOT run that script, nor ever ask the student to run it (or any command): a
+  background task re-renders both sheet files automatically within ~2s of you saving
+  `progress.md`. If the sheet ever looks stale, just wait a moment and re-READ `hero-sheet.txt`;
+  never involve the student — he only ever writes his own game code.
   Your job: keep the tiny `### Facts` block honest (increment a count or add to a list —
   chapter cleared, mini-challenge, predict-then-run win, break-it fix, boss won, hint used),
   then **SHOW** the sheet — READ `hero-sheet.txt` (the bare-box file) and paste it inside a ```

@@ -12,11 +12,11 @@ any time to see how far you've come.
 ║                                                      ║
 ╠═══════════════════ ABILITY SCORES ═══════════════════╣
 ║                                                      ║
-║ 🧠 LOGIC  (decisions, true/false) ☆☆☆☆☆              ║
-║ 🔁 STAMINA (loops)                ☆☆☆☆☆              ║
-║ 🎒 LORE   (lists & records)       ☆☆☆☆☆              ║
-║ 🛠️ DEBUGGING (fixing errors)      ★☆☆☆☆              ║
-║ ✨ CREATIVITY (your own designs)  ★☆☆☆☆              ║
+║ 🧠 LOGIC  (decisions, true/false) .....              ║
+║ 🔁 STAMINA (loops)                .....              ║
+║ 🎒 LORE   (lists & records)       .....              ║
+║ 🔧 DEBUGGING (fixing errors)      *....              ║
+║ ✨ CREATIVITY (your own designs)  *....              ║
 ║                                                      ║
 ╠═════════════════════ SPELLBOOK ══════════════════════╣
 ║                                                      ║

@@ -146,7 +146,7 @@ def compute(facts, ledger):
     stars = {}
     for label, skills in CLUSTERS.items():
         stars[label] = min(5, sum(1 for s in skills if ranks[s] in ("⚔️", "⭐")))
-    stars["🛠️ DEBUGGING (fixing errors)"] = min(5, facts["debug"])
+    stars["🔧 DEBUGGING (fixing errors)"] = min(5, facts["debug"])
     stars["✨ CREATIVITY (your own designs)"] = min(5, facts["mini"])
 
     return dict(level=level, xp=xp, cls=cls, ranks=ranks, stars=stars,
@@ -179,7 +179,7 @@ def dwidth(s):
 def render(facts, c):
     star_order = [
         "🧠 LOGIC  (decisions, true/false)", "🔁 STAMINA (loops)",
-        "🎒 LORE   (lists & records)", "🛠️ DEBUGGING (fixing errors)",
+        "🎒 LORE   (lists & records)", "🔧 DEBUGGING (fixing errors)",
         "✨ CREATIVITY (your own designs)",
     ]
 
@@ -195,7 +195,9 @@ def render(facts, c):
     LABEL_W = 34                           # ability label column -> star bars line up
     for label in star_order:
         n = c["stars"].get(label, 0)
-        bar = "★" * n + "☆" * (5 - n)
+        # ASCII pips (filled '*', empty '.') — unlike ★/☆ these are width-1 in EVERY
+        # renderer, so the right border stays straight in terminals and VS Code chat alike.
+        bar = "*" * n + "." * (5 - n)
         content.append(fit(label, LABEL_W) + bar)
     spell_section = len(content)
     # spellbook is a 2-column grid; pad the first column to the WIDEST entry (+2 gap) so the
