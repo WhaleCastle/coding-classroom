@@ -68,12 +68,18 @@ def parse_progress(text):
     text = re.sub(r"^(\s*)\*(\s)", r"\1-\2", text, flags=re.M)
     text = text.replace("*", "").replace("`", "")
 
-    # Case-insensitive split at the ledger heading; facts live above it, ledger below.
+    # The skill ledger lives in its own section; isolate it (below the heading) for ledger
+    # parsing only.
     parts = re.split(r"#+\s*skills?\s+ledger", text, flags=re.I, maxsplit=1)
-    facts_text, ledger_text = parts[0], (parts[1] if len(parts) > 1 else "")
+    ledger_text = parts[1] if len(parts) > 1 else ""
 
+    # Read each fact from the WHOLE document — NOT just the text above the ledger heading.
+    # The small-model tutor sometimes writes or reorders the `### Facts` block to sit AFTER
+    # the ledger, which used to push hero_name (and the counters) outside the search window
+    # so the sheet fell back to the "a new apprentice" placeholder. Fact keys are unique and
+    # never collide with ledger skill names, so scanning the full text is safe.
     def fact(key, default=""):
-        m = re.search(rf"^\s*-\s*{re.escape(key)}\s*:\s*(.*)$", facts_text, re.M | re.I)
+        m = re.search(rf"^\s*-\s*{re.escape(key)}\s*:\s*(.*)$", text, re.M | re.I)
         return m.group(1).strip() if m else default
 
     def to_int(key):
@@ -84,7 +90,7 @@ def parse_progress(text):
     # up to the next `- key:`), so a boss id mentioned in ANOTHER fact can't be miscounted.
     # Works for a same-line comma list OR a multi-line bulleted list; dedupe; keep only KNOWN ids.
     bw = re.search(r"^\s*-\s*bosses_won\s*:(.*?)(?=^\s*-\s*\w+\s*:|\Z)",
-                   facts_text, re.M | re.S | re.I)
+                   text, re.M | re.S | re.I)
     chunk = bw.group(1) if bw else ""
     seen, bosses = set(), []
     for b in re.findall(r"boss-\d+", chunk.lower()):
