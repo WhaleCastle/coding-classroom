@@ -135,9 +135,9 @@ Once the Gate above is met, finish like this.
 > "That's **Chapter 6 finished** — and it's a huge one! Your game can REPEAT now:
 > you just built a real turn-by-turn battle that fights all the way to a winner.
 > You even tamed an infinite loop with `Ctrl+C`. Run your fight a few more times
-> with different HP and watch it play out… and when you're ready, Chapter 7 adds
-> the `for` loop — drawing HP bars and counting things neatly. Stop here or fight
-> on!"
+> with different HP and watch it play out. And now a real test blocks the way:
+> **Boss II, the Pit Brawler** — a fight you must build entirely on your own, no
+> steps from me. Step into the pit now, or stop here and take it on next session?"
 
 Before you treat the chapter as done, if he hasn't already said it, ask:
 *"In your own words — why does a `while` loop need something to change inside it?"*
@@ -160,8 +160,8 @@ today's real date, and carry the Environment line forward:
 - Completed: built a turn-by-turn while-loop fight that ends on its own, with break and a win/lose message
 - Strong at: while loops; saw and stopped an infinite loop with Ctrl+C
 - Struggled with: nothing this time
-- How to help next: start Chapter 7 — for loops and counting
-- Next time: Chapter 7 — Counting & Rolling
+- How to help next: run Boss II — The Pit Brawler (Chapters 1–6 checkpoint, tutor muted)
+- Next time: Boss II — The Pit Brawler (then Chapter 7)
 ```
 
 **Then update the `### Facts`** in `progress.md`: `chapters_cleared` +1 (and +1 to `mini_challenges_done` / `predict_wins` / `break_it_fixes` for any that happened today) — the script turns these into his new Level, XP and spells.

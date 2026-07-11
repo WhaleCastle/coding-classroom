@@ -96,7 +96,7 @@ muted. Placement and what each tests:
 |------|----------|--------------------------------|
 | I — The Gate Guardian | 3 | print/strings, variables, input, f-strings, if/decisions, comparisons |
 | II — The Pit Brawler | 6 | + numbers & arithmetic, booleans & logic, while loops |
-| III | 9 | + for loops, lists, dictionaries |
+| III — The Hoard Keeper | 9 | + for loops, lists, dictionaries |
 | IV | 12 | + functions, return, random |
 | V | 15 | + strings, 2D maze, dialogue |
 | VI | 18 | + files/save, hardening, search & sort |
@@ -105,8 +105,8 @@ muted. Placement and what each tests:
 A boss is run with the tutor silent (it sets the scene, then stops teaching); a hint
 costs the student XP. A win awards XP, a level, a trophy, and ⭐ Mastered on those skills.
 Full rules: AGENTS.md "Boss-fight checkpoints". Build order: write each boss in the same
-batch as (or just after) the chapters it tests — Bosses I–II are buildable now (ch 1–6
-exist); III onward follow their chapters.
+batch as (or just after) the chapters it tests — Bosses **I–III are written** (ch 1–9
+exist); IV onward follow their chapters.
 
 The student also has a **hero character sheet** (`python-course/hero-sheet.md`) — a
 D&D-style record of his Level, XP, ability scores, spellbook of skills, and trophies, which
@@ -184,6 +184,8 @@ string lookup, not a guess. Use this exact spelling — no synonyms, no plurals.
 | `while loops` | Ch 6 |
 | `for loops` | Ch 7 |
 | `lists` | Ch 8 |
+| `dictionaries` | Ch 9 |
+| `functions` | Ch 10 |
 
 (The list grows as later chapters are written — add a new row when a chapter introduces
 a new ledger-tracked skill, and reuse the same spelling everywhere it appears.)
@@ -191,6 +193,7 @@ a new ledger-tracked skill, and reuse the same spelling everywhere it appears.)
 ## Status
 
 - Meta scaffolding (template, rulebook, this overview, assets/folders): in place.
-- Chapters **1–8 written** (each with a runnable reference solution). 9–20 + the
-  two bonuses still to come, in confirmed batches (see `CLAUDE.md` build order).
-  Pilot the early chapters and the maze chapter; fold feedback back in.
+- Chapters **1–10 written** (each with a runnable reference solution), plus **Boss
+  fights I–III**. 11–20 + the two bonuses still to come, in confirmed batches (see
+  `CLAUDE.md` build order). Pilot the early chapters and the maze chapter; fold
+  feedback back in.

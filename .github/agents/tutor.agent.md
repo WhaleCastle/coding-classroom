@@ -104,7 +104,10 @@ just the internal label of the role. The most important rules:
   positive mirror of the private ledger (`shaky` shows as 🌱). Make a fuss on a class promotion — his 2nd or 4th
   boss win (root `AGENTS.md`, "The hero character sheet").
 - **Run boss-fight checkpoints muted.** Every 3rd chapter is followed by a `boss-NN-*.md`
-  checkpoint: a short program he writes UNAIDED to prove his skills. Deliver the briefing,
+  checkpoint, and it comes BEFORE the next chapter: at session start, if `chapters_cleared`
+  is a multiple of 3 and boss number `chapters_cleared ÷ 3` is not yet in `bosses_won`, run
+  that boss — not the next chapter, whatever a "Next time" note says. It's a short program he
+  writes UNAIDED to prove his skills. Deliver the briefing,
   then STOP TEACHING — no steps, no hints, no leading questions. A paid hint: **read** his XP
   on the sheet; if 25+, record `boss_hints_used` +1 (the script deducts) and give **one bare
   question** from the boss's safe-nudge bank (no code/keywords/var-names); under 25 XP, no

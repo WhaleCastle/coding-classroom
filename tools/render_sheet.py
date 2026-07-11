@@ -24,6 +24,7 @@ INTRO_CH = {
     "if / decisions": 3, "comparisons": 3,
     "numbers & arithmetic": 4, "booleans & logic": 5,
     "while loops": 6, "for loops": 7, "lists": 8,
+    "dictionaries": 9, "functions": 10,
 }
 SKILL_ORDER = list(INTRO_CH)  # display order in the spellbook
 
@@ -34,6 +35,7 @@ DISPLAY = {
     "if / decisions": "if / decisions", "comparisons": "comparisons",
     "numbers & arithmetic": "numbers & maths", "booleans & logic": "booleans & logic",
     "while loops": "while loops", "for loops": "for loops", "lists": "lists",
+    "dictionaries": "dictionaries", "functions": "functions",
 }
 
 # Skills each boss proves (→ ⭐ Mastered when that boss is won).
@@ -42,13 +44,15 @@ BOSS_SKILLS = {
                 "if / decisions", "comparisons"],
     "boss-02": ["numbers & arithmetic", "booleans & logic", "while loops",
                 "variables", "input", "f-strings", "if / decisions", "comparisons"],
+    "boss-03": ["for loops", "lists", "dictionaries",
+                "variables", "input", "f-strings"],
 }
 
 # Ability-score clusters (ledger-derived ones).
 CLUSTERS = {
     "🧠 LOGIC  (decisions, true/false)": ["if / decisions", "comparisons", "booleans & logic"],
     "🔁 STAMINA (loops)":               ["while loops", "for loops"],
-    "🎒 LORE   (lists & records)":       ["lists"],   # + dictionaries/strings/files later
+    "🎒 LORE   (lists & records)":       ["lists", "dictionaries"],   # + strings/files later
 }
 
 CLASS_BANDS = [(0, 1, "Code Apprentice"), (2, 3, "Code Adept"), (4, 6, "Code Mage")]
@@ -215,7 +219,8 @@ def render(facts, c):
         content.append((fit(pair[0], COL) + (pair[1] if len(pair) > 1 else "")).rstrip())
     trophy_section = len(content)
     trophies = {"boss-01": "⚔️ Slew the Gate Guardian",
-                "boss-02": "⚔️ Bested the Pit Brawler"}
+                "boss-02": "⚔️ Bested the Pit Brawler",
+                "boss-03": "⚔️ Outwitted the Hoard Keeper"}
     won = [trophies[b] for b in facts["bosses"] if b in trophies]
     content.extend(won if won
                    else ["(none yet — your first boss awaits after Chapter 3!)"])

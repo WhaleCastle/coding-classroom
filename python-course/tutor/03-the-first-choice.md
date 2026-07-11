@@ -131,9 +131,10 @@ Once the Gate above is met, finish like this.
 > "That's **Chapter 3 finished** — a big one! Your game can *decide* now. It
 > reads the player's answer and reacts differently with `if`, `elif` and `else`.
 > Run your Locked Door a few more times, try the right answer and some wrong
-> ones, and watch it react… and when you're ready, Chapter 4 is where your game
-> learns maths — hero stats, hit points and damage. We can stop here or keep
-> going."
+> ones, and watch it react. And now you've reached your very first **boss**: the
+> **Gate Guardian** blocks the path onward, and to beat it you'll write a little
+> program all by yourself — no steps from me this time. Face it now, or stop here
+> and take it on next session?"
 
 Before you treat the chapter as done, if he hasn't already said it, ask:
 *"In your own words — what does `if`/`else` do, and why does the indentation
@@ -151,8 +152,8 @@ break-on-purpose), that is a real "Struggled with"; otherwise leave it as below:
 - Completed: built the Locked Door — a working if/elif/else that reacts to the player's answer
 - Strong at: writing the branches and indenting them correctly; using == to compare text
 - Struggled with: nothing this time
-- How to help next: start Chapter 4 — numbers and maths for hero stats
-- Next time: Chapter 4 — Hero stats and maths
+- How to help next: run Boss I — The Gate Guardian (Chapters 1–3 checkpoint, tutor muted)
+- Next time: Boss I — The Gate Guardian (then Chapter 4)
 ```
 
 **Then update the `### Facts`** in `progress.md`: `chapters_cleared` +1 (and +1 to `mini_challenges_done` / `predict_wins` / `break_it_fixes` for any that happened today) — the script turns these into his new Level, XP and spells.
