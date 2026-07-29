@@ -1,15 +1,17 @@
 # Coding Classroom
 
 An AI-tutored coding classroom for young beginners, designed to run inside
-**VS Code with GitHub Copilot** (works in Cursor too). The AI is the tutor;
-the student types every line of code himself.
+**VS Code with OpenAI Codex** (works with GitHub Copilot or Cursor too). The
+AI is the tutor; the student types every line of code himself.
 
 ## How it works
 
 - `AGENTS.md` — the tutor's rulebook: teaching style, hard rules ("never write
-  the student's code"), session flow. Read automatically by Copilot and Cursor.
-- `.github/agents/tutor.agent.md` — a custom tutor agent for VS Code Copilot
-  Chat. It is told never to write the student's code or run his programs — it
+  the student's code"), session flow. Codex reads it automatically (it is
+  Codex's native instructions file); Copilot and Cursor read it too.
+- `.github/agents/tutor.agent.md` — an optional custom tutor agent for VS Code
+  Copilot Chat (Codex doesn't need it — `AGENTS.md` is enough). It is told
+  never to write the student's code or run his programs — it
   only edits its own `progress.md` log — so the student always does the work.
   (His D&D-style `hero-sheet.md` is generated from `progress.md` by a small
   script, `tools/render_sheet.py` — the tutor never edits the sheet itself.)
@@ -29,29 +31,25 @@ strictly in role: anything unrelated to the courses is politely declined.
 
 1. Install [Python 3](https://www.python.org/downloads/) (tick "Add to PATH" on
    Windows) and [VS Code](https://code.visualstudio.com/).
-2. In VS Code, install the **Python** extension and sign in to GitHub Copilot.
+2. In VS Code, install the **Python** extension and the **Codex** extension
+   (sign in with your ChatGPT account). GitHub Copilot works too — see the
+   note after these steps.
 3. Clone or download this repo and open the `coding-classroom` folder in
    VS Code (File → Open Folder). When VS Code asks **"Do you trust the authors
    of this folder?"**, choose **Yes**.
-4. Open Copilot Chat. In the agent/mode picker choose the **tutor** agent and a
-   small model (GPT-5 mini works well). In its tools, leave file-editing on (it
-   keeps a progress log) but turn OFF anything that runs terminal commands — the
-   student runs his code himself. If the tutor agent doesn't appear, **Ask mode**
-   works too, but it can't keep the progress log (you'd update it by hand).
-5. **(One-time) Let the tutor save its log without nagging.** So the student
-   isn't asked to click "Keep" every time the tutor updates its log, add this to
-   your VS Code **user** settings — `Cmd/Ctrl+Shift+P` → **Preferences: Open User
-   Settings (JSON)** — then reload VS Code:
-
-   ```jsonc
-   "chat.tools.edits.autoApprove": {
-     "**/progress.md": true
-   }
-   ```
-
-   This auto-keeps edits to `progress.md` only — every other file still asks first,
-   and the student always runs his own code in the terminal. (It's per machine, and
-   `progress.md` is the only file the tutor ever touches.)
+4. Open the Codex chat panel and set it to **work locally**. Pick a solid model
+   — the course is scripted so even small models teach well; a mid-tier model
+   (e.g. GPT-5.6-Terra Medium) is a comfortable choice. No agent setup is
+   needed: Codex reads `AGENTS.md` by itself and becomes the tutor.
+5. **(One-time) Let the tutor save its log without nagging.** Codex's default
+   *Suggest* approval mode asks for an **Approve** click on every file edit —
+   including the tutor's own `progress.md` log, and an unapproved log means the
+   tutor forgets the whole session. Switch the approval mode to **Auto-edit**
+   (in the Codex panel's mode picker, or type `/mode auto-edit`): file edits
+   apply automatically, while running commands still asks first (the student
+   runs his own code himself anyway). Codex can't auto-approve just one file;
+   if you'd rather stay in *Suggest* mode, teach the student that when the
+   tutor saves its log, he clicks **Approve**.
 6. **The hero character sheet builds itself.** `python-course/hero-sheet.md` (his
    D&D Level / XP / spells / trophies) is generated from `progress.md` by
    `tools/render_sheet.py`. A VS Code task (in `.vscode/tasks.json`) starts a small
@@ -64,9 +62,16 @@ strictly in role: anything unrelated to the courses is politely declined.
    `progress.md`; it never edits the sheet.)
 7. The student types: `Hi! I'm ready for my Python lesson.` — and off you go.
 
+> **Using GitHub Copilot instead?** In Copilot Chat's agent/mode picker choose
+> the **tutor** agent (from `.github/agents/tutor.agent.md`), leave file-editing
+> on but untick anything that runs terminal commands, and add
+> `"chat.tools.edits.autoApprove": { "**/progress.md": true }` to your VS Code
+> **user** settings so the log saves without a "Keep" click each time.
+
 ## Daily session
 
-1. Open the folder, open Copilot Chat, pick the **tutor** agent.
+1. Open the folder and open the Codex chat (Copilot users: pick the **tutor**
+   agent).
 2. Greet the tutor. It reads the progress files and suggests today's plan —
    accept it, or ask for a different chapter or a review.
 3. Your work goes in the course's `student/chapter-XX/` folder; run code

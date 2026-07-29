@@ -19,6 +19,7 @@
 ║ 🔒 comparisons       🔒 numbers & maths              ║
 ║ 🔒 booleans & logic  🔒 while loops                  ║
 ║ 🔒 for loops         🔒 lists                        ║
+║ 🔒 dictionaries      🔒 functions                    ║
 ║                                                      ║
 ╠══════════════════════ TROPHIES ══════════════════════╣
 ║                                                      ║

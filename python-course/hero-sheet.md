@@ -26,6 +26,7 @@ any time to see how far you've come.
 ║ 🔒 comparisons       🔒 numbers & maths              ║
 ║ 🔒 booleans & logic  🔒 while loops                  ║
 ║ 🔒 for loops         🔒 lists                        ║
+║ 🔒 dictionaries      🔒 functions                    ║
 ║                                                      ║
 ╠══════════════════════ TROPHIES ══════════════════════╣
 ║                                                      ║
