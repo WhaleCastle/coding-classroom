@@ -1,4 +1,4 @@
-# Chapter 6 — The Battle Loop
+# Python Course — Chapter 6: The Battle Loop
 
 ## Tutor instructions for this chapter
 
@@ -81,7 +81,11 @@ Success: HP totals fall each turn and the loop ends when someone hits 0 or below
 
 **Step 5 — Stop swinging a dead goblin (`break`).** Point out a bug: after the
 killing blow, the goblin still bites back. Teach `break`. Have him add, right after
-the goblin's HP drops, `if goblin_hp <= 0: break`.
+the goblin's HP drops:
+```
+if goblin_hp <= 0:
+    break
+```
 Success: once the goblin dies, the hero doesn't take a final bite.
 
 **Step 6 — Who won?** After the loop, have him use an `if`/`else` (Chapter 3) on
@@ -130,6 +134,13 @@ He designs the numbers and the flavour himself. Hints only, never the code.
 
 Once the Gate above is met, finish like this.
 
+This is a milestone chapter. If he chooses to **stop here for today** instead of
+facing the boss now, you MAY offer the playable trailer once as a "here's where
+we're heading" taste: in the terminal, run
+`python python-course/tutor/assets/demo_play.py`. He PLAYS it — he is never shown
+its code, and is never expected to write code like it. If he heads straight into
+the boss instead, skip the trailer — Boss II stays the headline.
+
 **Say this** — one warm message; swap the blanks for what he actually did:
 
 > "That's **Chapter 6 finished** — and it's a huge one! Your game can REPEAT now:
@@ -142,11 +153,6 @@ Once the Gate above is met, finish like this.
 Before you treat the chapter as done, if he hasn't already said it, ask:
 *"In your own words — why does a `while` loop need something to change inside it?"*
 and wait for his answer.
-
-This is a milestone chapter. If he'd enjoy it, you MAY offer the playable trailer
-once as a "here's where we're heading" taste: in the terminal, run
-`python python-course/tutor/assets/demo_play.py`. He PLAYS it — he is never shown
-its code, and is never expected to write code like it.
 
 **Then save his progress** — add a block to the TOP of
 `python-course/progress.md`. Don't say you're doing it. Copy this shape, put in

@@ -1,4 +1,4 @@
-# Chapter 5 — Game Rules (True/False)
+# Python Course — Chapter 5: Game Rules (True/False)
 
 ## Tutor instructions for this chapter
 
@@ -51,40 +51,51 @@ and `print(2 > 5)`. Predict first, then run. Teach: Python answered each questio
 with `True` or `False` — a brand new kind of value.
 Success: he sees `True` and `False` printed and knows they're Python's yes/no.
 
-**Step 2 — Store a rule in a box.** Teach that the answer can be saved. Have him
+**Step 2 — Break it on purpose (the capital matters).** Ask him to try
+`print(true)` — small t — and predict first. He'll get
+`NameError: name 'true' is not defined`. Why? Python only knows `True` with a
+capital T; little `true` is just the name of a box that doesn't exist. Have him
+fix it.
+Success: he read the `NameError`, can say why it happened, and fixed the capital.
+
+**Step 3 — Store a rule in a box.** Teach that the answer can be saved. Have him
 write `hp = 8` then `is_alive = hp > 0` then `print(is_alive)`. Ask: what's inside
 `is_alive`?
 Success: `is_alive` prints `True`; he can explain it's holding the answer to
 `hp > 0`.
 
-**Step 3 — Both must be true (`and`).** Teach `and`. Have him make two rules of his
+**Step 4 — Both must be true (`and`).** Teach `and`. Have him make two rules of his
 own (e.g. `has_key = True`, `is_alive = ...`) and a combined one
 `can_open_door = has_key and is_alive`. Print it.
 Success: `can_open_door` is `True` only when both parts are true.
 
-**Step 4 — Flip it (`not`) and choose (`or`).** Teach `not` and `or` briefly. Ask
+**Step 5 — Flip it (`not`) and choose (`or`).** Teach `not` and `or` briefly. Ask
 him to print `not is_alive` and an `or` rule of his own (e.g. `can_fight =
 has_sword or has_wand`).
 Success: he can predict the result of a `not` and an `or` before running.
 
-**Step 5 — Predict-then-run.** Give him three expressions to predict BEFORE
+**Step 6 — Predict-then-run.** Give him three expressions to predict BEFORE
 running, e.g. `True and False`, `True or False`, `not (5 > 2)`. He writes his
 guesses, then runs to check.
 Success: he correctly predicts at least two of the three.
 
-**Step 6 — Feed a rule into an `if`.** Tie it back to Chapter 3. Have him use one
+**Step 7 — Feed a rule into an `if`.** Tie it back to Chapter 3. Have him use one
 of his Booleans in an `if`/`elif`/`else` to print a game message ("You stride on,
 strong and ready." / "Careful — HP is low!" / "Game over.").
 Success: changing the HP value changes which message prints.
 
 ## Mini-challenge — The Rule Book
 
-In `rules.py`, the student builds a small **rule book** for his RPG using only
-this chapter and earlier ones. It must:
-- read or set at least two facts (e.g. `hp`, and whether he has the key),
-- make at least two Booleans from comparisons (e.g. `is_alive`, `in_danger`),
-- combine rules with `and`, `or`, or `not` at least once,
-- use one of the Booleans inside an `if`/`elif`/`else` to print a game outcome.
+New file `rule_book.py` — a FRESH scene, built from scratch (not the rules the
+steps already made): the crypt's **vault door**. Can the hero enter the vault?
+It must:
+- set or read at least two facts HE chooses (gold, a lit torch, hp — his call,
+  not the same facts from the steps),
+- make at least two Booleans from comparisons,
+- combine rules with `and`, `or`, or `not` at least once (rich enough AND still
+  alive? a lit torch OR a lantern?),
+- use one of the Booleans inside an `if`/`elif`/`else` to print whether the
+  vault opens.
 
 He designs the rules himself. Hints only, never the code.
 
@@ -103,7 +114,7 @@ He designs the rules himself. Hints only, never the code.
 | Quoted it: `"True"` | rule always behaves 'true' | "`True` is a special value, not text. Does it need quotes? What colour does the editor show it in?" |
 | lower-case `true` | `NameError: name 'true' is not defined` | "Python is fussy about the capital letter. How is `True` spelled?" |
 | Thought `and` means 'either' | rule never true | "`and` needs BOTH sides true. Which word do we use for 'at least one'?" |
-| Compared text to number by mistake | always `False`, no error | "Is `hp` a number or text right now? (Did it come from `input()`?)" |
+| Compared text to number by mistake | `TypeError: '>' not supported between instances of 'str' and 'int'` (with `==` it's silently always `False`) | "Is `hp` a number or text right now? (Did it come from `input()`?)" |
 
 ## Gate — do not move on until
 
@@ -131,12 +142,13 @@ his answer.
 
 **Then save his progress** — add a block to the TOP of
 `python-course/progress.md`. Don't say you're doing it. Copy this shape, put in
-today's real date, and carry the Environment line forward:
+today's real date, and fill the Environment line from the Student profile at the
+top of the file:
 
 ```
 ## Session — <today's date>
 - Course: python-course
-- Environment: <carry forward — e.g. Mac, runs with python3>
+- Environment: <from the Student profile — e.g. Windows, runs with python3>
 - Chapter: 5 — Game Rules (True/False)
 - Completed: built a rule book — Booleans from comparisons, combined with and/or/not, driving an if
 - Strong at: making rules from comparisons; predicting and/or results
@@ -164,7 +176,9 @@ it builds Booleans, combines them, and drives an `if`.
 # Skills used: booleans, comparisons, and/or/not, int(), if/elif/else. Nothing later.
 
 hp = int(input("Hero HP? "))
-has_key = input("Do you have the key? (yes/no) ").strip().lower() == "yes"
+# The comparison hands back True/False directly. (Answer must be a lowercase
+# "yes" — forgiving answers need string tools he meets in Chapter 13.)
+has_key = input("Do you have the key? (type yes or no) ") == "yes"
 
 # A comparison IS a True/False value we can store.
 is_alive = hp > 0

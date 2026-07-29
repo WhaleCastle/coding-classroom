@@ -1,4 +1,4 @@
-# Chapter 1 — Hero & Title Screen
+# Python Course — Chapter 1: Hero & Title Screen
 
 ## Tutor instructions for this chapter
 

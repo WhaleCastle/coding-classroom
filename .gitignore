@@ -3,6 +3,10 @@
 
 # OMC orchestration state (local, not course content)
 .omc/
+.omx/
+
+# Claude Code local settings — contains personal machine paths, never publish
+.claude/
 
 # Screenshots
 screenshots/

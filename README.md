@@ -96,8 +96,9 @@ strictly in role: anything unrelated to the courses is politely declined.
   and a story that branches into different endings — and along the way practises
   every programming skill in the **UK Key Stage 3–4 Computer Science**
   curriculum. Full chapter map and coverage in
-  `python-course/tutor/00-course-overview.md`. Chapters are being written and
-  piloted in batches.
+  `python-course/tutor/00-course-overview.md`. All 20 chapters, the 6 boss-fight
+  checkpoints and both bonus quests are written; they're piloted with a real
+  student and refined from session feedback.
 - **php-course**: planned.
 
 ## License

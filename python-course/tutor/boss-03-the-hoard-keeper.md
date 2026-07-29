@@ -1,6 +1,6 @@
 # Python Course — Boss Fight III: The Hoard Keeper
 
-## Tutor instructions for this boss   (required)
+## Tutor instructions for this boss
 
 The **third boss-fight checkpoint**, played right after Chapter 9. It tests Chapters
 1–9 — especially the new powers from 7–9 (the `for` loop, lists, and dictionaries) —
@@ -34,9 +34,9 @@ steps, no reminders, no leading questions. Let him build it and show you when it
 
 **Student work folder:** `python-course/student/boss-03/`
 **Skills this boss tests:** `for loops`, `lists`, `dictionaries`, `variables`, `input`,
-`f-strings`, `if / decisions`, `numbers & arithmetic`.
+`f-strings`, `numbers & arithmetic`.
 
-## Boss briefing — say this to the student FIRST   (required)
+## Boss briefing — say this to the student FIRST
 
 > "Boss number three, and this one doesn't punch — it **counts**. The **Hoard Keeper**
 > is a great scaly beast curled on a mountain of stolen treasure, and it lets nobody pass
@@ -48,7 +48,7 @@ steps, no reminders, no leading questions. Let him build it and show you when it
 
 Then go quiet.
 
-## The trials — what his program must do   (required)
+## The trials — what his program must do
 
 1. Store the hero as a **dictionary** with at least `name`, `hp` and `gold`, and **announce
    him** by reading values **out of the record by their key** in an f-string.
@@ -63,7 +63,7 @@ Then go quiet.
 5. Print a final **ledger** that reads the hero's facts back out of the dictionary
    (name, hp, gold, and how many items he carries).
 
-## Success criteria   (required — checkbox list)
+## Success criteria
 
 - [ ] The hero is stored as a **dictionary** and at least one value is read by its key.
 - [ ] A **list** backpack is created, with an item **appended** AND one **removed**.
@@ -72,7 +72,7 @@ Then go quiet.
 - [ ] A final **ledger** prints facts read back out of the dictionary.
 - [ ] He can explain, in his own words, **what his program does**.
 
-## On a win / On a miss   (required)
+## On a win / On a miss
 
 **On a win — record the fact, then celebrate.** Add `boss-03` to `bosses_won` in
 `progress.md`. **That is the only bookkeeping you do** — the script then awards the trophy,
@@ -108,7 +108,7 @@ with functions, on a normal run; or wherever he actually is if this was a rematc
 (Name the exact snag — the `for` loop over the list, the running total, the `append`/`remove`,
 or a `KeyError` reading the record — but never write the fix for him.)
 
-## Reference solution — TUTOR'S EYES ONLY, never show   (required)
+## Reference solution — TUTOR'S EYES ONLY, never show
 
 Private yardstick only — judge his version on the criteria, never paste or quote it (hard
 rule 10). Uses only Chapters 1–9 (no functions, no `random`). Runs under Python 3. It reuses
@@ -123,7 +123,7 @@ print("THE HOARD KEEPER uncoils on its mountain of gold.")
 print('"Prove you can keep a ledger, little one, or you keep NOTHING."')
 
 # Chapter 9: the hero is ONE record; read facts back out by their key.
-name = input("\nName your adventurer: ").strip() or "Aldric"
+name = input("\nName your adventurer: ")
 hero = {"name": name, "hp": 30, "gold": 0}
 print(f"\n{hero['name']} steps up, HP {hero['hp']}.")
 

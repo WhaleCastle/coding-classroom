@@ -1,6 +1,6 @@
 # Python Course — Boss Fight I: The Gate Guardian
 
-## Tutor instructions for this boss   (required)
+## Tutor instructions for this boss
 
 This is the **first boss-fight checkpoint**, played right after Chapter 3. It tests
 everything from Chapters 1–3 — **with you muted**. Deliver the briefing and the trials,
@@ -35,7 +35,7 @@ you tried…". Let him build it alone and ask him to show you when it runs.
 **Skills this boss tests:** `print / strings`, `variables`, `input`, `f-strings`,
 `if / decisions`, `comparisons`.
 
-## Boss briefing — say this to the student FIRST   (required)
+## Boss briefing — say this to the student FIRST
 
 > "Time to face the **Gate Guardian**, hero! A stone guardian blocks the only path
 > onward — and it only opens for someone clever. Your quest: write a little program
@@ -51,7 +51,7 @@ you tried…". Let him build it alone and ask him to show you when it runs.
 
 Then go quiet.
 
-## The trials — what his program must do   (required)
+## The trials — what his program must do
 
 1. Ask for the player's **hero name**, store it in a variable, and **greet him by name**
    using an f-string.
@@ -62,7 +62,7 @@ Then go quiet.
    answer is turned away — different messages print for different answers.
 5. Use the hero's **name in at least one of the reactions** (another f-string).
 
-## Success criteria   (required — checkbox list)
+## Success criteria
 
 - [ ] Running it asks for the hero's name and greets him by name with an f-string.
 - [ ] The Guardian asks a question and the answer is stored in a variable.
@@ -71,7 +71,7 @@ Then go quiet.
       away** (the output really changes with the answer).
 - [ ] He can explain, in his own words, **what decides which message appears.**
 
-## On a win / On a miss   (required)
+## On a win / On a miss
 
 **On a win — record the fact, then celebrate.** Add `boss-01` to `bosses_won` in
 `progress.md`. **That is the only bookkeeping you do** — the script then awards the trophy,
@@ -101,7 +101,7 @@ script (A); otherwise → say script (B).
 (Point him at the exact thing that tripped him — Chapter 2 for names/f-strings, Chapter 3
 for the `if`/`elif`/`else` — without writing any of it for him.)
 
-## Reference solution — TUTOR'S EYES ONLY, never show   (required)
+## Reference solution — TUTOR'S EYES ONLY, never show
 
 Private yardstick only — judge his version against the success criteria, never paste or
 quote this (hard rule 10). Uses only Chapters 1–3 (no numbers, no `int()`, no loops, no
@@ -113,23 +113,28 @@ is where capitalisation gets handled). Runs under Python 3.
 # Skills used: print, strings, variables, input(), f-strings, if/elif/else, == / !=.
 # Nothing from Chapter 4 onward.
 
-print("=" * 30)
+print("==============================")
 print("   THE GATE GUARDIAN")
-print("=" * 30)
+print("==============================")
 
 # Chapter 2: ask the hero's name, store it, greet him with an f-string.
 name = input("State your name, traveller: ")
-print(f"\nThe Guardian's stone eyes open. \"{name}... we shall see if you are worthy.\"")
+print()
+print(f"The Guardian's stone eyes open. {name}, we shall see if you are worthy.")
 
 # Chapter 3: the Guardian poses a riddle and reads the answer.
-print("\nGuardian: \"What has keys, but opens no doors?\"")
+print()
+print("Guardian: What has keys, but opens no doors?")
 answer = input("Your answer: ")
 
 # Chapter 3: react with if / elif / else, deciding with a comparison.
 if answer == "piano":
-    print(f"\nThe gate swings wide. \"Pass, {name}. You have a true hero's wit.\"")
+    print()
+    print(f"The gate swings wide. Pass, {name}. You have a true hero's wit.")
 elif answer == "keyboard":
-    print(f"\n\"A clever guess, {name} — but not my answer. The gate stays shut.\"")
+    print()
+    print(f"A clever guess, {name} — but not my answer. The gate stays shut.")
 else:
-    print(f"\nThe Guardian folds its arms. \"No, {name}. Return when you are wiser.\"")
+    print()
+    print(f"The Guardian folds its arms. No, {name}. Return when you are wiser.")
 ```

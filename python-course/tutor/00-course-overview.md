@@ -30,9 +30,9 @@ the UK Key Stage 3–4 Computer Science curriculum** (see the coverage map below
   tiny helper, `print("\n" * 50)`, or a one-line ANSI version handed to him); and
   (b) **single-key w/a/s/d input** (no ENTER) — this needs low-level, per-OS code
   (`msvcrt` on Windows, `termios` on Mac/Linux), is well beyond KS3–4 and not
-  cross-platform-writable, so it is a **given helper**, `get_key()`. (It currently
-  lives inline in `assets/demo_play.py`; when ch 14 is written, factor it into
-  `assets/controls.py` so the student's own maze can reuse it.) The student
+  cross-platform-writable, so it is a **given helper**, `get_key()` in
+  `assets/controls.py` (Chapter 14 has the student copy that file next to his
+  maze; `demo_play.py` keeps its own inline copy). The student
   imports it in ONE line — `from controls import get_key`, just like
   `import random` — and calls it; he never writes or reads its internals. A
   one-line import is easier to learn than low-level terminal code in his own file.
@@ -48,6 +48,9 @@ the UK Key Stage 3–4 Computer Science curriculum** (see the coverage map below
 - The student saves his work in `../student/chapter-XX/`.
 - Chapters get gradually harder. Never skip the gate conditions at the end of
   each chapter.
+- **Side quests (Chapter 11 onward):** each of those chapters ends with one
+  optional bonus objective. Offer it only when the session is ahead of pace and
+  the main work is done; skipping costs nothing (AGENTS.md "Side quests").
 - **Keep it playable.** Every chapter ends by inviting him to RUN his game-so-far
   and enjoy it — name the concrete new thing he can do. There is also a pre-made
   **trailer**, `tutor/assets/demo_play.py` (pure text, no install): a 2–3 minute
@@ -69,9 +72,9 @@ the UK Key Stage 3–4 Computer Science curriculum** (see the coverage map below
 | 4 | Stats & Damage | int vs float, casting, arithmetic `+ - * / // % **` | Roll stats; a damage calculator |
 | 5 | Game Rules (True/False) | Boolean type, `and`/`or`/`not`, relational ops | Gate logic; "is the hero alive?" |
 | 6 | The Battle Loop | `while`, counters, `break`, infinite-loop danger | Turn-based fight until HP hits 0 |
-| 7 | Counting & Rolling | `for`, `range()`, loop variable, nested-loop intro | HP bar / dice roller |
+| 7 | Counting & Rolling | `for`, `range()`, loop variable, nested-loop intro | HP bar & battle count-up (real dice wait for Ch 12) |
 | 8 | The Inventory | lists: create, `append`, remove, index, `len`, loop | Backpack: add/drop/show items |
-| 9 | The Character Sheet | dictionaries (records): key/value, lookup, update | Hero as a record + creator (shows sprite) |
+| 9 | The Character Sheet | dictionaries (records): key/value, lookup, update | Hero as a record + creator (prints the given ASCII portrait) |
 | 10 | Actions as Functions | `def`, parameters, calling, why-modular | `attack()`, `heal()`, `show_status()` |
 | 11 | Functions that Answer | `return`, local vs global variables, modules | `roll_damage()`, `is_alive()`; refactor battle |
 | 12 | Random Encounters | `import random`, `randint`, `choice` | Random damage + a random monster |
@@ -97,16 +100,18 @@ muted. Placement and what each tests:
 | I — The Gate Guardian | 3 | print/strings, variables, input, f-strings, if/decisions, comparisons |
 | II — The Pit Brawler | 6 | + numbers & arithmetic, booleans & logic, while loops |
 | III — The Hoard Keeper | 9 | + for loops, lists, dictionaries |
-| IV | 12 | + functions, return, random |
-| V | 15 | + strings, 2D maze, dialogue |
-| VI | 18 | + files/save, hardening, search & sort |
+| IV — The Shapeshifter | 12 | + functions, return values, random |
+| V — The Labyrinth Lord | 15 | + string handling, 2D lists, dialogue & flags |
+| VI — The Archivist | 18 | + file handling, defensive design, search & sort |
 | Final Boss | (Ch 20 capstone) | everything |
+
+*(A "+" row adds NEW skills to that boss's test — it doesn't re-star earlier bosses' skills.)*
 
 A boss is run with the tutor silent (it sets the scene, then stops teaching); a hint
 costs the student XP. A win awards XP, a level, a trophy, and ⭐ Mastered on those skills.
-Full rules: AGENTS.md "Boss-fight checkpoints". Build order: write each boss in the same
-batch as (or just after) the chapters it tests — Bosses **I–III are written** (ch 1–9
-exist); IV onward follow their chapters.
+Full rules: AGENTS.md "Boss-fight checkpoints". All six bosses are written; the Final
+Boss is the Chapter 20 capstone itself (winning it sets `game_complete: yes`, which
+crowns the sheet Code Archmage and stars the whole spellbook).
 
 The student also has a **hero character sheet** (`python-course/hero-sheet.md`) — a
 D&D-style record of his Level, XP, ability scores, spellbook of skills, and trophies, which
@@ -186,14 +191,25 @@ string lookup, not a guess. Use this exact spelling — no synonyms, no plurals.
 | `lists` | Ch 8 |
 | `dictionaries` | Ch 9 |
 | `functions` | Ch 10 |
+| `return values` | Ch 11 |
+| `random` | Ch 12 |
+| `string handling` | Ch 13 |
+| `2D lists` | Ch 14 |
+| `dialogue & flags` | Ch 15 |
+| `file handling` | Ch 16 |
+| `defensive design` | Ch 17 |
+| `search & sort` | Ch 18 |
+| `planning & design` | Ch 19 |
 
-(The list grows as later chapters are written — add a new row when a chapter introduces
-a new ledger-tracked skill, and reuse the same spelling everywhere it appears.)
+(Chapter 20 and the two bonus quests introduce no new ledger skill — the capstone
+combines everything, and the bonuses are optional extras.)
 
 ## Status
 
 - Meta scaffolding (template, rulebook, this overview, assets/folders): in place.
-- Chapters **1–10 written** (each with a runnable reference solution), plus **Boss
-  fights I–III**. 11–20 + the two bonuses still to come, in confirmed batches (see
-  `CLAUDE.md` build order). Pilot the early chapters and the maze chapter; fold
-  feedback back in.
+- **The full course is written: Chapters 1–20, Boss fights I–VI, and Bonus Quests
+  B1–B2**, each with a runnable reference solution (the complete reference game also
+  lives at `tutor/reference/rpg/crypt.py`). From Chapter 11 on, every chapter carries
+  an optional side quest (see AGENTS.md "Side quests"). Pilot each stretch before he
+  reaches it — especially the maze chapter (14) and the capstone — and fold feedback
+  back in.

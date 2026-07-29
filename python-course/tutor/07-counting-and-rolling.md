@@ -1,4 +1,4 @@
-# Chapter 7 — Counting & Rolling
+# Python Course — Chapter 7: Counting & Rolling
 
 ## Tutor instructions for this chapter
 
@@ -13,7 +13,7 @@ him it's coming in Chapter 12 and keep him counting for now.
 
 **Student work folder:** `python-course/student/chapter-07/`
 
-**Skills this chapter leans on:** `variables`, `f-strings`, `numbers & arithmetic`.
+**Skills this chapter leans on:** `variables`, `f-strings`, `numbers & arithmetic`, `while loops`.
 
 ## Learning objectives (max 3)
 
@@ -62,22 +62,32 @@ Success: he sees `0 1 2` and knows the loop variable changes each time.
 the bar. (He can pick his own symbol.)
 Success: a row of his chosen symbol, one per HP, prints.
 
-**Step 4 — Add the empty slots.** Have him add a second loop for the missing HP:
-`for i in range(max_hp - hp): bar = bar + "."` (with `max_hp` he chooses). Print
+**Step 4 — Break it on purpose (the missing box).** Have him comment out or delete
+the `bar = ""` line, predict what will happen, then run. He'll see
+`NameError: name 'bar' is not defined`. Ask: "The loop keeps adding onto `bar` —
+but where did `bar` come from in the first place? Can the loop add onto a box that
+was never made?" Then have him restore the line.
+Success: he saw the `NameError`, can explain why the loop needs a starting box, and
+restored the line.
+
+**Step 5 — Add the empty slots.** First, have him set `max_hp` — a plain number
+variable, same as Chapter 4 — to his own choice. Then have him add a second loop for
+the missing HP: `for i in range(max_hp - hp): bar = bar + "."`. Print
 `HP {hp}/{max_hp} [{bar}]`.
 Success: a full bar like `HP 7/10 [♥♥♥♥♥♥♥...]` prints.
 
-**Step 5 — Count with the loop variable.** Teach `range(1, 7)`. Have him add up the
+**Step 6 — Count with the loop variable.** Teach `range(1, 7)`. Have him add up the
 faces of a die by COUNTING (not random): `total = 0`, then
 `for face in range(1, 7): total = total + face`, then print the total. (It's 21.)
 Make clear this is counting, and real random dice come later.
 Success: it prints 21 and he can say what the loop added up.
 
-**Step 6 — A tiny grid (nested loop).** Show a loop inside a loop. Have him print a
-small patrol grid: `for row in range(3):` and inside it build a line with
+**Step 7 — A tiny grid (nested loop).** Show a loop inside a loop. Have him print a
+small patrol grid: `for row in range(3):`, and — as the FIRST line inside that outer
+loop, so every row starts fresh — `line = ""`; then inside it build the line with
 `for col in range(3): line = line + "+ "`, then print the line.
 Success: a 3×3 grid of symbols prints; he sees the inner loop runs fully each outer
-turn.
+turn, and that `line` resets at the start of every row.
 
 ## Mini-challenge — The HP / Stamina Bar
 
@@ -105,7 +115,7 @@ code. (No `random` — that's Chapter 12.)
 | Expected `range(3)` to include 3 / start at 1 | off-by-one bar | "How many numbers does `range(3)` give, and what's the first one?" |
 | Missing colon after `for` | `SyntaxError` | "Like `if` and `while`, the `for` line ends with one little mark. Is it there?" |
 | Body not indented | `IndentationError` | "Which lines belong inside the loop? How do we show that to Python?" |
-| Reset `bar = ""` inside the loop | bar never grows | "Where should the empty bar start — before the loop, or every time round?" |
+| Reset `bar = ""` inside the loop | bar never grows | "For the HP *bar*, where should the empty text start? For a *grid*, where must each row's line start afresh?" |
 | Asks for real random dice | (none) | "Great idea — real dice need `random`, and that's Chapter 12! For now we count. Want to make the bar fancier instead?" |
 
 ## Gate — do not move on until

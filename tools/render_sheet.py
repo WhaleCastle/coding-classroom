@@ -25,6 +25,9 @@ INTRO_CH = {
     "numbers & arithmetic": 4, "booleans & logic": 5,
     "while loops": 6, "for loops": 7, "lists": 8,
     "dictionaries": 9, "functions": 10,
+    "return values": 11, "random": 12, "string handling": 13,
+    "2D lists": 14, "dialogue & flags": 15, "file handling": 16,
+    "defensive design": 17, "search & sort": 18, "planning & design": 19,
 }
 SKILL_ORDER = list(INTRO_CH)  # display order in the spellbook
 
@@ -36,23 +39,37 @@ DISPLAY = {
     "numbers & arithmetic": "numbers & maths", "booleans & logic": "booleans & logic",
     "while loops": "while loops", "for loops": "for loops", "lists": "lists",
     "dictionaries": "dictionaries", "functions": "functions",
+    "return values": "return values", "random": "random",
+    "string handling": "string handling", "2D lists": "2D grids",
+    "dialogue & flags": "dialogue & flags", "file handling": "files & saving",
+    "defensive design": "defensive design", "search & sort": "search & sort",
+    "planning & design": "planning & design",
 }
 
 # Skills each boss proves (→ ⭐ Mastered when that boss is won).
 BOSS_SKILLS = {
-    "boss-01": ["print / strings", "variables", "input", "f-strings",
-                "if / decisions", "comparisons"],
+    "boss-01": ["print / strings", "running a file in the terminal", "variables",
+                "input", "f-strings", "if / decisions", "comparisons"],
     "boss-02": ["numbers & arithmetic", "booleans & logic", "while loops",
                 "variables", "input", "f-strings", "if / decisions", "comparisons"],
-    "boss-03": ["for loops", "lists", "dictionaries",
+    "boss-03": ["for loops", "lists", "dictionaries", "numbers & arithmetic",
                 "variables", "input", "f-strings"],
+    "boss-04": ["functions", "return values", "random", "dictionaries",
+                "while loops", "if / decisions", "f-strings", "variables"],
+    "boss-05": ["string handling", "2D lists", "dialogue & flags", "for loops",
+                "if / decisions", "dictionaries", "while loops", "input"],
+    "boss-06": ["file handling", "defensive design", "search & sort",
+                "lists", "for loops", "while loops", "functions", "return values"],
 }
 
 # Ability-score clusters (ledger-derived ones).
 CLUSTERS = {
-    "🧠 LOGIC  (decisions, true/false)": ["if / decisions", "comparisons", "booleans & logic"],
-    "🔁 STAMINA (loops)":               ["while loops", "for loops"],
-    "🎒 LORE   (lists & records)":       ["lists", "dictionaries"],   # + strings/files later
+    "🧠 LOGIC  (decisions, true/false)": ["if / decisions", "comparisons", "booleans & logic",
+                                          "dialogue & flags", "defensive design"],
+    "🔁 STAMINA (loops & functions)":    ["while loops", "for loops", "functions",
+                                          "return values", "search & sort"],
+    "🎒 LORE   (lists & records)":       ["lists", "dictionaries", "string handling",
+                                          "2D lists", "file handling"],
 }
 
 CLASS_BANDS = [(0, 1, "Code Apprentice"), (2, 3, "Code Adept"), (4, 6, "Code Mage")]
@@ -130,6 +147,8 @@ def compute(facts, ledger):
     mastered = set()
     for b in facts["bosses"]:
         mastered.update(BOSS_SKILLS.get(b, []))
+    if facts["game_complete"]:
+        mastered = set(SKILL_ORDER)   # the capstone is the Final Boss — it proves everything
 
     level = facts["chapters"] + len(facts["bosses"])
     xp = (XP["chapter"] * facts["chapters"] + XP["mini"] * facts["mini"]
@@ -188,7 +207,7 @@ def dwidth(s):
 
 def render(facts, c):
     star_order = [
-        "🧠 LOGIC  (decisions, true/false)", "🔁 STAMINA (loops)",
+        "🧠 LOGIC  (decisions, true/false)", "🔁 STAMINA (loops & functions)",
         "🎒 LORE   (lists & records)", "🔧 DEBUGGING (fixing errors)",
         "✨ CREATIVITY (your own designs)",
     ]
@@ -220,8 +239,13 @@ def render(facts, c):
     trophy_section = len(content)
     trophies = {"boss-01": "⚔️ Slew the Gate Guardian",
                 "boss-02": "⚔️ Bested the Pit Brawler",
-                "boss-03": "⚔️ Outwitted the Hoard Keeper"}
+                "boss-03": "⚔️ Outwitted the Hoard Keeper",
+                "boss-04": "⚔️ Unmasked the Shapeshifter",
+                "boss-05": "⚔️ Escaped the Labyrinth Lord",
+                "boss-06": "⚔️ Outsorted the Archivist"}
     won = [trophies[b] for b in facts["bosses"] if b in trophies]
+    if facts["game_complete"]:
+        won.append("👑 Conquered the Crypt of Broken Keys")
     content.extend(won if won
                    else ["(none yet — your first boss awaits after Chapter 3!)"])
 

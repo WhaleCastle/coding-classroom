@@ -1,4 +1,4 @@
-# Chapter 10 — Actions as Functions
+# Python Course — Chapter 10: Actions as Functions
 
 ## Tutor instructions for this chapter
 
@@ -30,12 +30,13 @@ attack damage comes from the hero's stored `attack` stat, not a dice roll.
 
 ## Concepts — explain in this voice
 
-- **Function (def):** "A function is a spell you write ONCE and then cast by name.
-  `def show_status():` names a block of steps; later, writing `show_status()` runs
-  every one of them. Write the recipe once, use it as often as you like."
-- **Calling:** "Writing the recipe card doesn't cook dinner — and *defining* a
-  function doesn't run it. It only runs when you CALL it, by writing its name with
-  brackets: `show_status()`. Define it above; call it below."
+- **Function (def):** "A function is a recipe card you write ONCE. `def
+  show_status():` names a block of steps, just like writing out a recipe — but
+  writing the card doesn't cook the meal. Write it once, and it just sits there,
+  ready whenever you need it."
+- **Calling:** "A function only runs when you CALL it — that's the moment you
+  actually cook the recipe, by writing its name with brackets: `show_status()`.
+  Define it above; call it below."
 - **Parameters (ingredients):** "The words in the brackets are the function's
   ingredients. `def heal(hero, amount):` says 'hand me a hero and an amount, and
   I'll do the healing.' Whatever you pass in the brackets when you call it —
@@ -94,8 +95,8 @@ record for real.
 
 **Step 6 — attack(attacker, defender).** Have him write `def attack(attacker,
 defender):` that does `defender["hp"] = defender["hp"] - attacker["attack"]` and
-prints the blow. Make a second record — `goblin = {"name": "Goblin", "hp": 12,
-"attack": 4}` — and call `attack(hero, goblin)`, then `attack(goblin, hero)`. Two
+prints the blow. Make a second record — `goblin = {"name": "Goblin", "cls": "monster", "hp": 12,
+"max_hp": 12, "attack": 4}` — and call `attack(hero, goblin)`, then `attack(goblin, hero)`. Two
 records, one function, either can be attacker or defender.
 Success: each call lowers the right fighter's HP; he sees one function serve both
 sides.
@@ -141,6 +142,7 @@ He designs the moves and flavour himself. Hints only, never the code. (No `retur
 | Body not indented | `IndentationError` | "Which lines belong INSIDE the function? How do we show Python that?" |
 | Left out an argument | `TypeError: ... missing 1 required positional argument` | "What ingredients did the brackets ask for? Did you hand it every one?" |
 | Expected `heal` to change HP but it didn't | HP unchanged | "Did you put the new HP back INTO the record, or just work it out and throw it away?" |
+| Passed a fact instead of the hero (`heal(hero["hp"], 8)`) | HP unchanged, no error | "Did you hand the recipe the whole hero, or just one fact copied out of him?" |
 
 ## Gate — do not move on until
 

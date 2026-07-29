@@ -1,4 +1,4 @@
-# Chapter 8 — The Inventory
+# Python Course — Chapter 8: The Inventory
 
 ## Tutor instructions for this chapter
 
@@ -65,7 +65,11 @@ name and print the count again. Ask him to predict the new count first.
 Success: the item is gone and the count drops by one.
 
 **Step 5 — Show the whole bag (`for`).** Reuse Chapter 7's `for`. Have him print a
-tidy list: `for item in backpack: print("- " + item)`.
+tidy list:
+```
+for item in backpack:
+    print("- " + item)
+```
 Success: every item prints on its own line, however many there are.
 
 **Step 6 — Break it on purpose (the index trap).** Have him try to print
@@ -101,8 +105,8 @@ He designs the items and flavour himself. Hints only, never the code.
 |---|---|---|
 | Index past the end | `IndexError: list index out of range` | "How many items are there, and what number is the first? What's the biggest index that can exist?" |
 | `remove` an item not in the list | `ValueError: list.remove(x): x not in list` | "Is that item spelled EXACTLY as it is in the bag? Capitals count." |
-| Forgot the brackets: `backpack = "Key", "Torch"` | odd behaviour later | "How does Python know it's a list? What goes around the items?" |
-| `append` two items at once | only one added / error | "`append` adds ONE thing. How could you add a second?" |
+| Forgot the brackets: `backpack = "Key", "Torch"` | `AttributeError: 'tuple' object has no attribute 'append'` | "How does Python know it's a list? What goes around the items?" |
+| `append` two items at once | `TypeError: list.append() takes exactly one argument (2 given)` | "`append` adds ONE thing. How could you add a second?" |
 | Looped but printed the list each time | whole list repeats | "Inside `for item in backpack:`, what should you print — the one `item`, or the whole `backpack`?" |
 
 ## Gate — do not move on until
@@ -177,5 +181,4 @@ for item in backpack:
 
 # Reach one item by index. Lists count from 0, so [0] is the FIRST item.
 print(f"\nFirst item in the bag: {backpack[0]}")
-print(f"The key is item number {backpack.index('Rusty Key') + 1}.")
 ```

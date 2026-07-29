@@ -1,6 +1,6 @@
 # Python Course — Boss Fight II: The Pit Brawler
 
-## Tutor instructions for this boss   (required)
+## Tutor instructions for this boss
 
 The **second boss-fight checkpoint**, played right after Chapter 6. It tests Chapters
 1–6 — especially the new powers from 4–6 (numbers & maths, true/false logic, the `while`
@@ -25,12 +25,16 @@ steps, no reminders, no leading questions. Let him build it and show you when it
 - Stay inside Chapters 1–6: **no `for` loops, no lists** (those are 7–8). If he reaches
   for them, gently say "everything you need is from Chapter 6 or earlier." See AGENTS.md
   "Boss-fight checkpoints".
+- **Rematch-safe:** this boss is *usually* played right after Chapter 6, but bosses are
+  non-blocking — he may face it later. Don't assume it's his 2nd boss or that Chapter 7 is
+  next: the win scripts branch on bosses-slain, and the "next quest" line is generic — when
+  you send him onward, name his REAL next quest.
 
 **Student work folder:** `python-course/student/boss-02/`
 **Skills this boss tests:** `numbers & arithmetic`, `booleans & logic`, `while loops`,
 `variables`, `input`, `f-strings`, `if / decisions`, `comparisons`.
 
-## Boss briefing — say this to the student FIRST   (required)
+## Boss briefing — say this to the student FIRST
 
 > "Boss number two, and this one **fights back**! The **Pit Brawler** is waiting in the
 > arena, and the only way past is to win a real **turn-by-turn battle**. Your quest: write
@@ -40,11 +44,11 @@ steps, no reminders, no leading questions. Let him build it and show you when it
 > it, run it, and **show me the fight when it works.** Into the pit, hero!
 >
 > Battle tip: if your fight ever runs **forever** and won't stop, click the terminal and
-> press **Ctrl+C** to break out — then take another look at what's meant to *end* the loop."
+> press **Ctrl+C** to break out."
 
 Then go quiet.
 
-## The trials — what his program must do   (required)
+## The trials — what his program must do
 
 1. Give the hero and the Brawler **HP and attack values**, with **at least one number read
    from the player** using `int(input())` and stored in a variable.
@@ -56,7 +60,7 @@ Then go quiet.
    and/or `break`; no infinite loop).
 5. After the loop, use **`if`/`else`** to announce **victory or defeat**.
 
-## Success criteria   (required — checkbox list)
+## Success criteria
 
 - [ ] At least one fighter's stat is read with `int(input())` into a variable.
 - [ ] A `while` loop runs the battle, continuing only while **both** have HP left.
@@ -65,7 +69,7 @@ Then go quiet.
 - [ ] `if`/`else` announces who won.
 - [ ] He can explain, in his own words, **what makes the loop stop.**
 
-## On a win / On a miss   (required)
+## On a win / On a miss
 
 **On a win — record the fact, then celebrate.** Add `boss-02` to `bosses_won` in
 `progress.md`. **That is the only bookkeeping you do** — the script then awards the trophy,
@@ -99,7 +103,7 @@ normal run; or wherever he actually is if this was a rematch).
 (Name the exact snag — the `and` condition, the missing `break`, or forgetting to subtract
 HP — but never write the fix for him.)
 
-## Reference solution — TUTOR'S EYES ONLY, never show   (required)
+## Reference solution — TUTOR'S EYES ONLY, never show
 
 Private yardstick only — judge his version on the criteria, never paste or quote it (hard
 rule 10). Uses only Chapters 1–6 (no `for`, no lists). Runs under Python 3.

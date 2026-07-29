@@ -1,4 +1,4 @@
-# Chapter 9 — The Character Sheet
+# Python Course — Chapter 9: The Character Sheet
 
 ## Tutor instructions for this chapter
 
@@ -21,7 +21,7 @@ graphics code.)
 
 **Student work folder:** `python-course/student/chapter-09/`
 
-**Skills this chapter leans on:** `variables`, `f-strings`, `input`, `lists`.
+**Skills this chapter leans on:** `variables`, `f-strings`, `input`, `lists`, `for loops`.
 
 ## Learning objectives (max 3)
 
@@ -65,7 +65,8 @@ sheet. Ready? Let's fill in his character sheet."* Keep it warm, then start Step
 **Step 1 — Build the record.** New file `hero_sheet.py`. Teach the curly-bracket
 dictionary. Have him write `hero = {"name": "Aldric", "cls": "warrior"}` (his own
 name/class are fine) and `print(hero)`. Point out the curly brackets and that each
-entry is a `"label": value` pair separated by a comma.
+entry is a `"label": value` pair separated by a comma. Say: "`cls` is just short
+for *class* — Python keeps the word `class` for itself, so we shorten ours."
 Success: the whole record prints, showing both label:value pairs inside `{ }`.
 
 **Step 2 — Look one fact up.** Teach lookup by key. Have him print just the name:
@@ -137,7 +138,7 @@ e.g. `HERO_ART = """ …paste… """` then `print(HERO_ART)`. Make clear it's a 
 | Forgot quotes on a key | `NameError: name 'name' is not defined` | "Is `name` a label (text) or a variable? How do we show Python it's text?" |
 | Comma missing between pairs | `SyntaxError` | "How does Python know where one `label: value` ends and the next begins?" |
 | Looked up bag but printed the whole record | too much prints | "Which key holds JUST the backpack? Ask the record for that one." |
-| Tried to `append` to the whole dict | `AttributeError` | "`append` is a list trick. Which key inside the record IS the list?" |
+| Tried to `append` to the whole dict | `AttributeError: 'dict' object has no attribute 'append'` | "`append` is a list trick. Which key inside the record IS the list?" |
 
 ## Gate — do not move on until
 
@@ -222,8 +223,8 @@ HERO_ART = """
 """
 
 # Build the hero as ONE record. Each entry is a "label": value pair.
-name = input("Name your hero: ").strip() or "Aldric"
-cls = input("Class (warrior/mage/rogue): ").strip() or "warrior"
+name = input("Name your hero: ")
+cls = input("Class (warrior/mage/rogue): ")
 hero = {
     "name": name,
     "cls": cls,

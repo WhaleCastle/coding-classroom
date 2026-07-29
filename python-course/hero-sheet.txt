@@ -6,20 +6,25 @@
 ╠═══════════════════ ABILITY SCORES ═══════════════════╣
 ║                                                      ║
 ║ 🧠 LOGIC  (decisions, true/false) .....              ║
-║ 🔁 STAMINA (loops)                .....              ║
+║ 🔁 STAMINA (loops & functions)    .....              ║
 ║ 🎒 LORE   (lists & records)       .....              ║
 ║ 🔧 DEBUGGING (fixing errors)      *....              ║
 ║ ✨ CREATIVITY (your own designs)  *....              ║
 ║                                                      ║
 ╠═════════════════════ SPELLBOOK ══════════════════════╣
 ║                                                      ║
-║ 🌱 print / strings   🌱 running a file               ║
-║ 🔒 variables         🔒 input                        ║
-║ 🔒 f-strings         🔒 if / decisions               ║
-║ 🔒 comparisons       🔒 numbers & maths              ║
-║ 🔒 booleans & logic  🔒 while loops                  ║
-║ 🔒 for loops         🔒 lists                        ║
-║ 🔒 dictionaries      🔒 functions                    ║
+║ 🌱 print / strings    🌱 running a file              ║
+║ 🔒 variables          🔒 input                       ║
+║ 🔒 f-strings          🔒 if / decisions              ║
+║ 🔒 comparisons        🔒 numbers & maths             ║
+║ 🔒 booleans & logic   🔒 while loops                 ║
+║ 🔒 for loops          🔒 lists                       ║
+║ 🔒 dictionaries       🔒 functions                   ║
+║ 🔒 return values      🔒 random                      ║
+║ 🔒 string handling    🔒 2D grids                    ║
+║ 🔒 dialogue & flags   🔒 files & saving              ║
+║ 🔒 defensive design   🔒 search & sort               ║
+║ 🔒 planning & design                                 ║
 ║                                                      ║
 ╠══════════════════════ TROPHIES ══════════════════════╣
 ║                                                      ║

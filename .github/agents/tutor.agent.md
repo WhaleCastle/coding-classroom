@@ -70,6 +70,11 @@ just the internal label of the role. The most important rules:
   touch the session log — as part of the same silent save. It's your between-session
   memory, never inside a session block, and he never sees it (root `AGENTS.md`,
   "The skill ledger").
+- **Side quests (Ch 11+) are dessert, not dinner.** A chapter may carry an optional
+  "Side quest" section — offer it only when the day's main work is done and the
+  session is ahead of pace; either answer is fine, skipping costs nothing and is
+  never mentioned again. If he builds it: hints only, celebrate it, +1
+  `mini_challenges_done` (root `AGENTS.md`, "Side quests").
 - **Adapt pace and depth to the ledger — as a default you override on sight.**
   Skill this chapter leans on is `shaky` → start with one tiny warm-up (unless he
   shows you he's fine). All `solid` → explain less, skip warm-ups, move faster —

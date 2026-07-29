@@ -1,4 +1,4 @@
-# Chapter 2 — Name Your Hero
+# Python Course — Chapter 2: Name Your Hero
 
 ## Tutor instructions for this chapter
 
@@ -74,14 +74,20 @@ Success: the game asks, he types a name, the game greets that name.
 **Step 6 — f-strings.**
 His Step 5 greeting is probably clunky (two prints, or string-gluing). Show the
 f-string *concept* with a DIFFERENT example (e.g. a sword: `f"You found the {sword}"`),
-then ask him to upgrade his greeting to one f-string like `f"Welcome, {hero}! Your
-quest begins."`.
+then ask him to upgrade his greeting to ONE f-string that welcomes the hero by
+name — one string, one hole, his own words.
 Success: the greeting uses `f"...{hero}..."` and runs.
 
-**Step 7 — Choose a class.**
+**Step 7 — Break it on purpose.**
+Ask him to delete the `f` before the quotes in his greeting and run it — predict
+first: what will the message look like now? He'll see the hole printed literally
+(`{hero}`) instead of the name. Talk about why, then have him put the `f` back.
+Success: he saw the literal `{hero}`, can say what the `f` is for, and fixed it.
+
+**Step 8 — Choose a class.**
 Ask him to add a SECOND question — the hero's class (warrior, mage, rogue… his
 choice of options) — store it in another box, then print ONE final sentence that
-uses BOTH boxes, e.g. `f"{hero} the {hero_class} steps into the crypt."`.
+uses BOTH boxes to introduce the hero. He writes the words himself.
 Success: one sentence, two holes, both filled correctly.
 
 ## Mini-challenge — Character Creator
@@ -106,11 +112,11 @@ Then he builds it. Hints only.
 
 ## Common mistakes & the hints to give
 
-| Mistake | What he'll see | Your hint |
+| Mistake | What he'll see | Your hint (NOT the fix) |
 |---|---|---|
-| Quotes around the variable in an f-string `{"hero"}` | the literal word, not the value | "Inside the curly brackets Python wants the box's *name*, not letters in quotes. Take the quotes out." |
+| Quotes around the variable in an f-string `{"hero"}` | the literal word, not the value | "Inside the curly brackets — is that a box's *name*, or letters in quotes? Which one does the hole want?" |
 | Forgot the `f` before the quotes | `{hero}` prints literally | "Your message printed the hole instead of filling it. What letter goes before the quote to tell Python this string has holes?" |
-| Space in a variable name (`hero name`) | `SyntaxError` | "Box labels can't have spaces. Programmers join words with an underscore `_` instead." |
+| Space in a variable name (`hero name`) | `SyntaxError` | "Box labels can't have spaces in them. What could join the two words into one label?" |
 | Used a box before making it | `NameError: name 'hero' is not defined` | "Python reads top to bottom. Did you ask for the box before you'd filled it?" |
 | `=` vs `==` (may appear) | varies | "One `=` means PUT INTO the box. (Two `==` comes later — it means *compare*.)" |
 

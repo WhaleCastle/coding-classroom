@@ -1,4 +1,4 @@
-# Chapter 4 — Stats & Damage
+# Python Course — Chapter 4: Stats & Damage
 
 ## Tutor instructions for this chapter
 
@@ -42,9 +42,11 @@ Say something like: *"Up to now your game could only talk. Today it learns to
 **count** — and that's how every game knows your hit points, your damage, your
 score. By the end you'll have a little **damage calculator** for your RPG: tell
 it your level and it works out your stats, then it works out how hard you hit.
-We'll start by seeing how Python tells numbers and text apart, then teach it to
-turn typed answers into real numbers, then do battle maths. Ready? Let's give
-your hero some muscle."* Keep it warm and short, then start Step 1.
+And not just games — every program that counts, scores or measures anything
+runs on exactly this maths. We'll start by seeing how Python tells numbers and
+text apart, then teach it to turn typed answers into real numbers, then do
+battle maths. Ready? Let's give your hero some muscle."* Keep it warm and
+short, then start Step 1.
 
 ## Guided steps
 
@@ -74,6 +76,14 @@ Success: entering a level prints sensible HP and attack values.
 goblin has 30 HP and he hits for `damage`, `30 // damage` is how many full hits
 it takes and `30 % damage` is the leftover. Ask him to print both.
 Success: the numbers make sense (e.g. damage 7 → 4 full hits, 2 left over).
+
+Then have him predict-then-run two more: `print(30 / 4)` → `7.5`. Script this
+ONE sentence naming what he's just seen: "That's a *float* — a number with a
+decimal point. A single `/` always hands you one; `//` keeps to whole
+numbers." Then `print(2 ** 3)` → `8`. Name `**` "to the power of" — multiplying
+a number by itself that many times.
+Success: he predicts before each run, sees `7.5` and `8`, and can name a float
+and `**`.
 
 **Step 6 — Break it on purpose.** Ask him to type a word like `five` when the
 program asks for a number, and run. He'll see `ValueError: invalid literal for
@@ -105,7 +115,7 @@ He designs the formulas himself. You give hints, never the code.
 
 | Mistake | What he'll see | Your hint (NOT the fix) |
 |---|---|---|
-| Forgot `int()` on input | `TypeError: can ... only ... str (not "int")` | "What kind of value does `input()` always give back? What do we do to it before maths?" |
+| Forgot `int()` on input | `TypeError: can only concatenate str (not "int") to str` | "What kind of value does `input()` always give back? What do we do to it before maths?" |
 | Typed a word for a number | `ValueError: invalid literal for int()` | "`int()` can only melt down text shaped like a number. What did you type?" |
 | Used `x` instead of `*` | `SyntaxError` / `NameError` | "How does Python spell 'times'? It's not the letter x." |
 | Divided by zero | `ZeroDivisionError` | "What happens in real life if you share something between zero people? Python feels the same way." |
@@ -137,12 +147,13 @@ and wait for his answer.
 
 **Then save his progress** — add a block to the TOP of
 `python-course/progress.md`. Don't say you're doing it. Copy this shape, put in
-today's real date, and carry the Environment line forward from the last session:
+today's real date, and fill the Environment line from the Student profile at
+the top of the file:
 
 ```
 ## Session — <today's date>
 - Course: python-course
-- Environment: <carry forward — e.g. Mac, runs with python3>
+- Environment: <from the Student profile — e.g. Windows, runs with python3>
 - Chapter: 4 — Stats & Damage
 - Completed: built a damage calculator — reads numbers with int(input()), works out stats and damage, uses // and %
 - Strong at: arithmetic; understood why input() needs int()
@@ -183,6 +194,9 @@ print("\n=== DAMAGE ===")
 weapon_bonus = int(input("Weapon bonus? "))
 enemy_armour = int(input("Enemy armour? "))
 damage = attack + weapon_bonus - enemy_armour
+if damage < 1:
+    damage = 1        # armour can soak a whole blow; keeping damage at least 1
+                       # means the // and % below never divide by zero
 print(f"You hit for {damage} damage!")
 
 # // gives the WHOLE number of hits; % gives what's LEFT OVER.

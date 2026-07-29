@@ -1,4 +1,4 @@
-# Chapter 3 — The First Choice
+# Python Course — Chapter 3: The First Choice
 
 ## Tutor instructions for this chapter
 
@@ -108,7 +108,7 @@ the `if` lines.
 
 | Mistake | What he'll see | Your hint |
 |---|---|---|
-| `=` instead of `==` in the `if` | `SyntaxError` | "Are you *putting* or *asking* here? Which one does the `if` need — one equals or two?" |
+| `=` instead of `==` in the `if` | `SyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='?` | "Are you *putting* or *asking* here? Which one does the `if` need — one equals or two? (the message names the fix itself — if he's read it aloud, just ask him to apply it)" |
 | Missing colon `:` | `SyntaxError: expected ':'` | "The `if` line ends with a special punctuation mark. Read the error — Python even tells you which one is missing." |
 | No indent under `if` | `IndentationError: expected an indented block` | "Which lines belong to the fork? How does Python show that a line is *inside* the `if`?" |
 | Random extra indent | `IndentationError: unexpected indent` | "One line is standing too far to the right. Which one? Line it up with its neighbours." |
@@ -120,7 +120,8 @@ the `if` lines.
 - The Locked Door fully works (right and wrong answers behave correctly).
 - From a spoken description only ("ask for a colour; if it's your favourite say X,
   otherwise say Y"), he writes a working `if`/`else` with NO syntax hints from you.
-- He has fixed at least 2 indentation errors across the chapter by himself.
+- He has fixed at least one `IndentationError` unaided (the Step 4
+  break-it-on-purpose counts) and can say what the error means.
 
 ## End of chapter
 
@@ -172,11 +173,11 @@ it runs and has the three branches. Note: no numbers/`int()` here — that's Ch 
 
 ```python
 # locked_door.py — Chapter 3 reference (tutor only)
-# Skills used: input(), variables, f-strings, if/elif/else, == and !=. Nothing later.
+# Skills used: input(), variables, f-strings, if/elif/else, ==. Nothing later.
 
 hero = input("Your hero's name? ")
 print(f"{hero} reaches a stone door carved with a riddle.")
-print('Riddle: "I open every lock but the last. What am I?"')
+print("Riddle: I open every lock but the last. What am I?")
 
 answer = input("Your answer: ")
 
