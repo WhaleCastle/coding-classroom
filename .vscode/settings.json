@@ -1,0 +1,24 @@
+{
+  // Let the tutor save its own session log without a "Keep" click each time.
+  // progress.md is the ONLY file the tutor may ever edit (AGENTS.md hard rule 1) —
+  // every other path, above all anything under */student/**, still asks first.
+  // Without this, an unapproved save means the tutor forgets the whole session.
+  // (Copilot honours this. Codex and Antigravity have no per-file setting — set
+  // their approval mode once per machine instead; see README step 5.)
+  "chat.tools.edits.autoApprove": {
+    "**/progress.md": true
+  },
+
+  // The hero-sheet renderer, which the folderOpen task in tasks.json starts.
+  // It only reads progress.md and writes hero-sheet.md/.txt.
+  "chat.tools.terminal.autoApprove": {
+    "/^python tools/render_sheet\\.py$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  },
+
+  // The course folder is not a git repo for the student, and it may sit on a
+  // synced drive with a lot of files.
+  "git.ignoreLimitWarning": true
+}

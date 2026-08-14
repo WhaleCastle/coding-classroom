@@ -1,20 +1,22 @@
 # Coding Classroom
 
-An AI-tutored coding classroom for young beginners, designed to run inside
-**VS Code with OpenAI Codex** (works with GitHub Copilot or Cursor too). The
+An AI-tutored coding classroom for young beginners. It runs in **VS Code**
+(with OpenAI Codex or GitHub Copilot) or in **Google Antigravity** (with
+Gemini) — pick whichever you have; the course behaves the same in all of them,
+and you can switch between them whenever you like without losing progress. The
 AI is the tutor; the student types every line of code himself.
 
 ## How it works
 
-- `AGENTS.md` — the tutor's rulebook: teaching style, hard rules ("never write
-  the student's code"), session flow. Codex reads it automatically (it is
-  Codex's native instructions file); Copilot and Cursor read it too.
-- `.github/agents/tutor.agent.md` — an optional custom tutor agent for VS Code
-  Copilot Chat (Codex doesn't need it — `AGENTS.md` is enough). It is told
-  never to write the student's code or run his programs — it
-  only edits its own `progress.md` log — so the student always does the work.
-  (His D&D-style `hero-sheet.md` is generated from `progress.md` by a small
-  script, `tools/render_sheet.py` — the tutor never edits the sheet itself.)
+- `AGENTS.md` — the tutor's rulebook, and the **only** one: teaching style, hard
+  rules ("never write the student's code"), session flow, and how the tutor keeps
+  its own log. Codex, Copilot, Antigravity and Cursor all read it automatically,
+  which is why the same folder becomes the same tutor in any of them. There is
+  deliberately no second, tool-specific copy of the rules to drift out of sync.
+- `.github/copilot-instructions.md` — a three-line pointer telling Copilot to go
+  read `AGENTS.md`. It contains no rules of its own.
+  (The student's D&D-style `hero-sheet.md` is generated from `progress.md` by a
+  small script, `tools/render_sheet.py` — the tutor never edits the sheet itself.)
 - `python-course/`, `vscode-basics/` — one folder per course. Each contains
   `tutor/` (one fully-scripted lesson file per chapter), `student/` (the
   student's own work, one folder per chapter), and `progress.md` (the tutor's
@@ -30,26 +32,41 @@ strictly in role: anything unrelated to the courses is politely declined.
 ## Setup (one-time, ~15 minutes)
 
 1. Install [Python 3](https://www.python.org/downloads/) (tick "Add to PATH" on
-   Windows) and [VS Code](https://code.visualstudio.com/).
-2. In VS Code, install the **Python** extension and the **Codex** extension
-   (sign in with your ChatGPT account). GitHub Copilot works too — see the
-   note after these steps.
-3. Clone or download this repo and open the `coding-classroom` folder in
-   VS Code (File → Open Folder). When VS Code asks **"Do you trust the authors
-   of this folder?"**, choose **Yes**.
-4. Open the Codex chat panel and set it to **work locally**. Pick a solid model
-   — the course is scripted so even small models teach well; a mid-tier model
-   (e.g. GPT-5.6-Terra Medium) is a comfortable choice. No agent setup is
-   needed: Codex reads `AGENTS.md` by itself and becomes the tutor.
-5. **(One-time) Let the tutor save its log without nagging.** Codex's default
-   *Suggest* approval mode asks for an **Approve** click on every file edit —
-   including the tutor's own `progress.md` log, and an unapproved log means the
-   tutor forgets the whole session. Switch the approval mode to **Auto-edit**
-   (in the Codex panel's mode picker, or type `/mode auto-edit`): file edits
-   apply automatically, while running commands still asks first (the student
-   runs his own code himself anyway). Codex can't auto-approve just one file;
-   if you'd rather stay in *Suggest* mode, teach the student that when the
-   tutor saves its log, he clicks **Approve**.
+   Windows), then **one** of:
+   [VS Code](https://code.visualstudio.com/) or
+   [Antigravity](https://antigravity.google/).
+2. Install the AI tutor's engine — again, whichever you have:
+   - **VS Code:** the **Python** extension, plus either the **Codex** extension
+     (sign in with a ChatGPT account) or **GitHub Copilot**.
+   - **Antigravity:** nothing to install; Gemini is built in. Add the **Python**
+     extension for the editor niceties.
+3. Clone or download this repo and open the `coding-classroom` folder
+   (File → Open Folder). When asked **"Do you trust the authors of this
+   folder?"**, choose **Yes**.
+4. Open the chat panel and pick a model. **No agent setup is needed in any of
+   them** — the tutor's whole personality lives in `AGENTS.md`, which each one
+   reads by itself when the folder opens:
+   - **Codex:** set the panel to *work locally*. The course is scripted so even
+     small models teach well; a mid-tier model is a comfortable choice.
+   - **Copilot:** any chat model. It picks up `AGENTS.md` plus the pointer in
+     `.github/copilot-instructions.md`.
+   - **Antigravity:** a current Gemini model (Gemini 3.7 Flash is a good fit —
+     fast replies matter more than deep reasoning when a child is waiting).
+5. **(One-time) Let the tutor save its log without nagging.** The tutor's memory
+   between sessions is `*/progress.md`, which it writes itself. If the tool asks
+   permission for every file edit and nobody clicks **Approve**, the session is
+   forgotten. Fix it once, in whichever tool you use:
+   - **Codex:** switch the approval mode to **Auto-edit** (the panel's mode
+     picker, or type `/mode auto-edit`). File edits then apply automatically
+     while running commands still asks first — which is what we want, since the
+     student runs his own code himself. Codex can't auto-approve a single file.
+   - **Copilot:** already handled — `.vscode/settings.json` in this repo
+     auto-approves edits to `**/progress.md` and nothing else.
+   - **Antigravity:** set the agent's approval/autonomy setting so file edits
+     apply without a click (it is per-machine, like Codex's).
+
+   If you'd rather approve everything by hand, that's fine too — just teach the
+   student that when the tutor says it's saving the log, he clicks **Approve**.
 6. **The hero character sheet builds itself.** `python-course/hero-sheet.md` (his
    D&D Level / XP / spells / trophies) is generated from `progress.md` by
    `tools/render_sheet.py`. A VS Code task (in `.vscode/tasks.json`) starts a small
@@ -62,16 +79,21 @@ strictly in role: anything unrelated to the courses is politely declined.
    `progress.md`; it never edits the sheet.)
 7. The student types: `Hi! I'm ready for my Python lesson.` — and off you go.
 
-> **Using GitHub Copilot instead?** In Copilot Chat's agent/mode picker choose
-> the **tutor** agent (from `.github/agents/tutor.agent.md`), leave file-editing
-> on but untick anything that runs terminal commands, and add
-> `"chat.tools.edits.autoApprove": { "**/progress.md": true }` to your VS Code
-> **user** settings so the log saves without a "Keep" click each time.
+> **Switching tools, or using two?** You can — and nothing is lost. Everything
+> that remembers the student lives in plain files inside the course folder
+> (`progress.md`, his own code under `student/`, and the hero sheet), not inside
+> any one editor. Open the same folder in VS Code on Monday and Antigravity on
+> Thursday and the tutor picks up exactly where it left off, because it reads the
+> same `progress.md` either way. The only per-tool step is the approval setting in
+> step 5 — do it once in each tool you actually use.
+>
+> **One rule if you do:** don't run two tutors on the folder at the same time.
+> Both would write `progress.md` and the last one to save wins.
 
 ## Daily session
 
-1. Open the folder and open the Codex chat (Copilot users: pick the **tutor**
-   agent).
+1. Open the folder and open the chat panel (Codex, Copilot, or Antigravity —
+   whichever you set up).
 2. Greet the tutor. It reads the progress files and suggests today's plan —
    accept it, or ask for a different chapter or a review.
 3. Your work goes in the course's `student/chapter-XX/` folder; run code
