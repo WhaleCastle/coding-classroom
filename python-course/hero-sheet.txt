@@ -1,19 +1,19 @@
 ╔════════════════ HERO CHARACTER SHEET ════════════════╗
 ║                                                      ║
 ║ Name: a new apprentice     Class: Code Apprentice    ║
-║ Level 1     XP: 35     Bosses slain: 0               ║
+║ Level 0     XP: 0     Bosses slain: 0                ║
 ║                                                      ║
 ╠═══════════════════ ABILITY SCORES ═══════════════════╣
 ║                                                      ║
 ║ 🧠 LOGIC  (decisions, true/false) .....              ║
 ║ 🔁 STAMINA (loops & functions)    .....              ║
 ║ 🎒 LORE   (lists & records)       .....              ║
-║ 🔧 DEBUGGING (fixing errors)      *....              ║
-║ ✨ CREATIVITY (your own designs)  *....              ║
+║ 🔧 DEBUGGING (fixing errors)      .....              ║
+║ ✨ CREATIVITY (your own designs)  .....              ║
 ║                                                      ║
 ╠═════════════════════ SPELLBOOK ══════════════════════╣
 ║                                                      ║
-║ 🌱 print / strings    🌱 running a file              ║
+║ 🔒 print / strings    🔒 running a file              ║
 ║ 🔒 variables          🔒 input                       ║
 ║ 🔒 f-strings          🔒 if / decisions              ║
 ║ 🔒 comparisons        🔒 numbers & maths             ║
