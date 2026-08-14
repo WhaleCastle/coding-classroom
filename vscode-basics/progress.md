@@ -1,8 +1,7 @@
 # Learning Progress — VS Code Basics
 
-The tutor reads this file at the start of every session.
-The STUDENT updates it at the end of every session by copying the tutor's
-progress block to the top of the log below.
+The TUTOR reads this file at the start of every session and keeps it updated
+itself — the student no longer has to. Newest session sits at the top of the log.
 
 ## Student profile
 
