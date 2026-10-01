@@ -256,9 +256,9 @@ the Environment line forward:
 - Next time: (optional) Bonus 1 — Draw Your Hero, or Bonus 2 — Monster Database
 ```
 
-**Then update the `### Facts`**: `chapters_cleared` +1, `mini_challenges_done` +1,
-`predict_wins` +1 for each correct predict-then-run guess in Step 7, and
-`break_it_fixes` +1 for the hardening pass in Step 6 — and, because this chapter's
+**Then update the `### Facts`**: `chapters_cleared` +1, `mini_challenges_done` +1
+(`predict_wins` for Step 7's guesses and `break_it_fixes` for Step 6's hardening pass
+were already counted the moment each happened) — and, because this chapter's
 Gate is the whole game, also set **`game_complete: yes`**. The script turns all of
 this into his final Level, XP, and — because of `game_complete` — the Code
 Archmage title on his sheet.

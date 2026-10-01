@@ -232,9 +232,10 @@ in today's real date, and carry the Environment line forward:
 
 **Then update the `### Facts`** in `progress.md`: this was an optional bonus
 quest, so `chapters_cleared` does **NOT** change — bump only
-`mini_challenges_done` +1 (and `break_it_fixes` +1 for fixing the "table
-already exists" crash, and `predict_wins` +1 if his `WHERE`/`ORDER BY`
-prediction was correct). The script turns these into his XP and spells; a
+`mini_challenges_done` +1 (his `break_it_fixes` for the "table already exists"
+crash and any `WHERE`/`ORDER BY` `predict_wins` were already counted the moment
+each happened — don't add them again). If your step saves already made today's
+block, replace it — one block per day. The script turns these into his XP and spells; a
 bonus quest still earns credit, it just isn't a numbered chapter.
 
 **Skill ledger: leave it untouched.** This quest introduces no new tracked

@@ -157,7 +157,7 @@ in today's real date:
 - Next time: Chapter 3 — The first choice
 ```
 
-**Then update the `### Facts`** in `progress.md`: `chapters_cleared` +1, **set `hero_name`** to the hero he just named, and +1 to `mini_challenges_done` / `predict_wins` / `break_it_fixes` for any that happened — the script turns these into his Level, XP, spells and his hero's name on the sheet.
+**Then update the `### Facts`** in `progress.md`: `chapters_cleared` +1, and +1 to `mini_challenges_done` if he did it (`hero_name`, `predict_wins` and `break_it_fixes` were already recorded the moment each happened — if `hero_name` isn't set yet, set it now) — the script turns these into his Level, XP, spells and his hero's name on the sheet.
 
 **Then refresh the skill ledger** (the same silent save, tutor-private — he never
 sees it). This chapter introduced `variables`, `input` and `f-strings`; in the

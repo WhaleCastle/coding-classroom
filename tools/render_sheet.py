@@ -134,12 +134,20 @@ def parse_progress(text):
         game_complete=fact("game_complete", "no").lower().startswith("y"),
     )
 
+    # Map any spelling the tutor might use back to the canonical skill name: the name
+    # in any case ("2d lists" → "2D lists"), or the sheet's friendly label, which a
+    # small-model tutor sometimes copies into the ledger ("files & saving" → "file handling").
+    alias = {}
+    for skill in INTRO_CH:
+        alias[skill.lower()] = skill
+        alias[DISPLAY[skill].lower()] = skill
+
     ledger = {}
     body = re.split(r"\n##+\s", ledger_text)[0]
     for nm, tag in re.findall(r"^\s*-\s*(.+?):\s*(\w+)\s*$", body, re.M):
         nm, tag = nm.strip().lower(), tag.lower()   # tolerate "Variables: Solid" etc.
         if tag in VALID_TAGS:
-            ledger[nm] = tag
+            ledger[alias.get(nm, nm)] = tag
     return facts, ledger
 
 

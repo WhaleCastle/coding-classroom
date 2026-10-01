@@ -142,6 +142,7 @@ rumour says the crypt hides a SECOND save crystal — enough for two heroes at o
 | Forgot `.close()` after writing | `save.txt` exists but is empty | "Which line actually finishes the job of saving your words to disk?" |
 | Used a loaded number without `int()` | `TypeError: can only concatenate str (not "int") to str` | "Is that really a NUMBER to Python, or still just text that looks like one?" |
 | Wrote facts without `\n` at the end | all the facts land on ONE line when read back | "How does `.write()` know where one fact ends and the next begins?" |
+| A bare `open("save.txt", "w")` on its own line (not stored in a variable, never written to) | the save file is suddenly EMPTY — opening for `"w"` wipes it, even if nothing is written after | "What does opening a file for WRITING do to what's already inside it? Does that line ever write anything back?" |
 | Typo'd the filename (`"save.txt"` vs `"saves.txt"`) | wrong-file `FileNotFoundError`, or saves go to a file he never checks | "Does the name in your `open()` for WRITING match the name in your `open()` for READING, letter for letter?" |
 
 ## Gate — do not move on until
@@ -183,9 +184,7 @@ Environment line forward:
 - Next time: Chapter 17 — Bullet-proof the Game
 ```
 
-**Then update the `### Facts`** in `progress.md`: `chapters_cleared` +1 (and +1 to
-`mini_challenges_done` / `predict_wins` / `break_it_fixes` for any that happened
-today) — the script turns these into his new Level, XP and spells.
+**Then update the `### Facts`** in `progress.md`: `chapters_cleared` +1 (and +1 to `mini_challenges_done` if he did it; `predict_wins` / `break_it_fixes` were already counted the moment each happened) — the script turns these into his new Level, XP and spells.
 
 **Then refresh the skill ledger** (silent, tutor-private — he never sees it). This
 chapter introduced `file handling`; move it from `new` toward `learning` or `solid`

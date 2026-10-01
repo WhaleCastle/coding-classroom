@@ -216,8 +216,9 @@ in today's real date, and carry the Environment line forward:
 
 **Then update the `### Facts`** in `progress.md`: this was an optional bonus
 quest, so `chapters_cleared` does **NOT** change — bump only
-`mini_challenges_done` +1 (and `predict_wins` +1 if his shirt-colour
-prediction was correct). The script turns these into his XP and spells; a
+`mini_challenges_done` +1 (his shirt-colour `predict_wins`, if he got it right,
+was already counted the moment it happened — don't add it again). If your step
+saves already made today's block, replace it — one block per day. The script turns these into his XP and spells; a
 bonus quest still earns credit, it just isn't a numbered chapter.
 
 **Skill ledger: leave it untouched.** This quest introduces no new tracked

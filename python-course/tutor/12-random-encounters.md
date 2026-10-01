@@ -185,9 +185,7 @@ today's real date, and carry the Environment line forward:
 - Next time: Boss IV — The Shapeshifter (then Chapter 13)
 ```
 
-**Then update the `### Facts`** in `progress.md`: `chapters_cleared` +1 (and +1
-to `mini_challenges_done` / `predict_wins` / `break_it_fixes` for any that happened
-today) — the script turns these into his new Level, XP and spells.
+**Then update the `### Facts`** in `progress.md`: `chapters_cleared` +1 (and +1 to `mini_challenges_done` if he did it; `predict_wins` / `break_it_fixes` were already counted the moment each happened) — the script turns these into his new Level, XP and spells.
 
 **Then refresh the skill ledger** (tutor-private — he never sees it). This
 chapter introduced `random`; move it from `new` toward `learning` or `solid` —

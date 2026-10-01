@@ -133,7 +133,7 @@ Before you treat the chapter as done, if he hasn't already said it, ask: *"In yo
 - Next time: Boss VI — The Archivist (then Chapter 19)
 ```
 
-**Then update the `### Facts`** in `progress.md`: `chapters_cleared` +1 (and +1 to `mini_challenges_done` / `predict_wins` / `break_it_fixes` for any that happened today) — the script turns these into his new Level, XP and spells.
+**Then update the `### Facts`** in `progress.md`: `chapters_cleared` +1 (and +1 to `mini_challenges_done` if he did it; `predict_wins` / `break_it_fixes` were already counted the moment each happened) — the script turns these into his new Level, XP and spells.
 
 **Then refresh the skill ledger** (the same silent save, tutor-private — he never sees it). This chapter introduced `search & sort`; move it from `new` toward `learning` or `solid` — only `solid` if he built BOTH the search and the sort unaided today, `shaky` if the found-flag or the swapped-flag genuinely tripped him up (see AGENTS.md "The skill ledger").
 

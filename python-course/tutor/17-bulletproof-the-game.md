@@ -10,8 +10,18 @@ never a bare `except:`.
 
 `.lower()` recaps Chapter 13; `.strip()` is new — "it trims stray spaces and
 the invisible newline `input()` leaves behind." Builds on Chapter 16's save
-crystal, which now gets a password — confirm save/load code exists before
-Step 5. Ceiling: Chapters 1–16 plus `try`/`except` and `.strip()`. No
+crystal, which now gets a password. **Check it BEFORE the opener, not at Step 5.**
+After showing the hero sheet, frame it first, then ask. Say something like: *"Today
+your save crystal gets a lock — but first, let's make sure the crystal itself is
+rock-solid. Run it for me: start a new game, win a fight, quit, then load. Does
+your hero come back with his battle scars?"* Does the loaded hero carry the
+HP and gold from AFTER the fight? If yes, give the opener and start. If no (no
+fight in it, or the save doesn't update), Chapter 16's gate was never really met.
+Say warmly that the crystal needs one last piece first, then teach Chapter 16
+Step 6 from that file before starting this chapter. Log that session's Chapter
+line as "16 — Save Your Adventure, Step 6 (finishing up)", adding ", then 17 —
+Bullet-proof the Game (in progress)" if you got into this chapter the same day.
+Leave the facts alone: Chapter 16 already counts, and you never take XP back. Ceiling: Chapters 1–16 plus `try`/`except` and `.strip()`. No
 search/sort yet — that's Chapter 18.
 
 **Student work folder:** `python-course/student/chapter-17/`
@@ -143,7 +153,7 @@ Before you treat the chapter as done, if he hasn't already said it, ask: *"In yo
 - Next time: Chapter 18 — Find & Sort the Loot
 ```
 
-**Then update the `### Facts`** in `progress.md`: `chapters_cleared` +1 (and +1 to `mini_challenges_done` / `predict_wins` / `break_it_fixes` for any that happened today).
+**Then update the `### Facts`** in `progress.md`: `chapters_cleared` +1 (and +1 to `mini_challenges_done` if he did it; `predict_wins` / `break_it_fixes` were already counted the moment each happened).
 
 **Then refresh the skill ledger** (the same silent save, tutor-private — he never sees it). This chapter introduced `defensive design`; move it from `new` toward `learning` or `solid` — only `solid` if he built the try/except guard, the re-ask loop AND the password check unaided today, `shaky` if `try`/`except` ordering or the infinite re-ask loop kept tripping him (see AGENTS.md "The skill ledger").
 
